@@ -19,8 +19,26 @@ int main(){
     cout << name << endl ;
     // Prints the value as Subodh Ghimire
 
-    // string name= "Subodh Ghimire";
-    // cout << name;
-    // Another way of declaring and assigning value to a variable
+    /*string name= "Subodh Ghimire";
+    cout << name;
+    Another way of declaring and assigning value to a variable */
+
+
+    //Data Types
+    int age = 40;
+    double temp = 93.8;
+    float area = 21.4f; // To specify its a float, we use letter f
+    char section ='A';
+    bool pass = true;   // True or False
+    cout << age << endl << temp << endl << area << endl << section << endl << pass << endl;
+
+    double random = age * temp;
+    cout << random << endl;
+
+
+    //Variable Declaration
+    int x=2, y=5;
+    auto z = 4;
+    cout << x << " " << y << " " << z ;
 
 }
