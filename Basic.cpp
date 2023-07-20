@@ -35,6 +35,7 @@ int main(){
     double random = age * temp;
     cout << random << endl;
 
+    
 
     //Variable Declaration
     int x=2, y=5;
