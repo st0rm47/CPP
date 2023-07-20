@@ -40,5 +40,4 @@ int main(){
     int x=2, y=5;
     auto z = 4;
     cout << x << " " << y << " " << z ;
-
 }
