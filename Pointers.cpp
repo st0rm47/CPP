@@ -39,8 +39,17 @@ int main(){
     p+i refers to the upcoming value depending upon i 
     (p+1) refers as p[1], (p+2) refers as p[2] */
 
+
+    //Dynamic Memory Allocation
+    int size = 10;
+    int *s= new int[10];
+    //Allocates size as 10
+    delete [] s;
+    //Deletes the allocated memory
 }
 
+
+/*--->> Array and Pointers */
 #include <iostream>
 using namespace std;
 int main() {
@@ -54,4 +63,23 @@ int main() {
     }
     cout << sum/size << endl ;
 
+}
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;       // size of array
+    int * nums = new int[n]; // Allocates memory size
+    for (int i=0;i<n;i++){
+        cin >> nums[i];        // Taking array inputs
+    }
+    int max = nums[0];
+
+    //Prints the maximum element in an array
+    for(int i=0; i<n; i++) {
+        if(nums[i]>max)
+            max = nums[i];
+    }
+    cout << max;
 }
