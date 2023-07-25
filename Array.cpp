@@ -32,8 +32,20 @@ int main(){
         sum += x;
     }
     cout << endl << sum << endl ;
-// Here variable x can be assigned to each value of array during the loop.
+    // Here variable x can be assigned to each value of array during the loop.
 
+    //Multidimensional Array
+    int seats[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    cout << seats[1][2];
+    /*First index access the 2nd array 
+    Second index access the 3rd item of 2nd array*/
+
+    //Loops in Multi-Array
+    for(int r=0;r<2;r++) {
+        for(int c=0;c<3;c++) {
+            cout << seats[r][c] << endl;
+        }
+    }
 }
 
 
