@@ -2,8 +2,6 @@
 using namespace std;
 int main(){
 
-    //Array
-
     string name[10];
     //Declaring an array called name of type string
 
