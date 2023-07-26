@@ -1,21 +1,34 @@
 #include <iostream>
 using namespace std;
-void hello() {      //Function definition
-    cout << "Hello!" << endl;
-    cout << "I am a sample function" << endl;
-}
-void bio (string name) {    //Function parameters : string
-  cout << "Hello, " << name << endl;
-}
-int sum(int x, int y) {     //Function with return value
-    return (x+y);
-}
-int main() {
-    hello();        //Function Call
-    hello();        
-    hello();        
-    hello();        //Function can be called as many times as you want  
-    bio("Subodh");
+    void hello() {      //Function definition
+        cout << "Hello!" << endl;
+        cout << "I am a sample function" << endl;
+    }
+    void bio (string name) {    //Function parameters : string
+    cout << "Hello, " << name << endl;
+    }
+    // int sum(int x, int y) {     //Function with return value
+    //     return (x+y);
+    // }
+
+    //Overloading of Functions
+    void sum(int x, int y) {
+        cout << x+y << endl;
+    }
+    void sum(double x, double y) {
+        cout << x+y << endl;
+    }
+
+    int main() {
+        sum(42, 31);
+        sum(3.14, 5.66);    //Function calls based on type of argument
+
+        hello();        //Function Call
+        hello();        
+        hello();        
+        hello();        //Function can be called as many times as you want  
+        bio("Subodh");
+
 }
 
 
