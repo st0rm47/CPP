@@ -7,6 +7,9 @@ void hello() {      //Function definition
 void bio (string name) {    //Function parameters : string
   cout << "Hello, " << name << endl;
 }
+int sum(int x, int y) {     //Function with return value
+    return (x+y);
+}
 int main() {
     hello();        //Function Call
     hello();        
@@ -14,6 +17,7 @@ int main() {
     hello();        //Function can be called as many times as you want  
     bio("Subodh");
 }
+
 
 /*--->>ChatBot using Function*/
 #include <iostream>
@@ -35,4 +39,20 @@ int main() {
     cin >> name;
 
     bot(mode, name);
+}
+
+
+/*--->>Days to Seconds*/
+#include <iostream>
+using namespace std;
+int toSeconds(int days){
+    int second= days*24*60*60;
+    return second;
+}
+int main() {
+    int days;
+    cin >> days;
+
+    int seconds = toSeconds(days);
+    cout << seconds;
 }
