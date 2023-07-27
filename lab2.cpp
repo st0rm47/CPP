@@ -27,7 +27,7 @@ int main(){
     complex c1,c2,c3;
     c1.input();     // function call
     c2.input();     // function call
-    c3.sum(c1,c2);  // functionc all
+    c3.sum(c1,c2);  // function call
     c3.showdata();  // function call
     return 0;
 }
