@@ -5,9 +5,9 @@ Objects are created using classes.*/
 //--->>Declaring a Class
     #include<iostream>
     using namespace std;
-    class myname{           //Declaring a class named myname using keyword: class
+    class myname{           // Declaring a class named myname using keyword: class
         public:             // Access Specifier
-        void name(){
+        void name(){        // Member function inside a class
             cout << "Subodh";
         }
     };
