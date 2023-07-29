@@ -21,3 +21,25 @@ Objects are created using classes.*/
         //When object is made constructor are executed automatically
         a.name();          // object with dot(.) should be used to access inside a class
     }
+
+//--->>Constructor
+#include <iostream>
+#include <string>
+using namespace std;
+class Painting {        //class
+    private:
+        string name;
+    public:
+        Painting(string name){      //constructor
+        
+            cout << name;
+        }
+};
+int main() {
+    string name;
+    cin >> name;
+
+    Painting painting(name);        //used constructor to pass the value
+
+    return 0;
+}
