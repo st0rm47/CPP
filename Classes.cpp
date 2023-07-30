@@ -18,7 +18,7 @@ Objects are created using classes.*/
     int main(){
         myname a;          // Object to access the data inside a class
 
-        //When object is made constructor are executed automatically
+        //When object is made constructor are executed automatically without calling them
         a.name();          // object with dot(.) should be used to access inside a class
     }
 
