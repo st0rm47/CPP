@@ -7,10 +7,10 @@ class one{
     public:
         void getdata(){ //member function
            
-           cout << "Enter values of x and y for class one";
+           cout << "Enter values of x and y for class one : ";
             cin >> x >> y;
         }
-        friend int display(one a,one );  //Friend function declaration with keyword friend and argument as object
+        friend int display(one a,two b );  //Friend function declaration with keyword friend and argument as object
 
 };      //Data and function in same place ---> Data Encapsulation
 
@@ -19,19 +19,21 @@ class two{
     public:
         void getdata(){ //member function
            
-           cout << "Enter values of x and y for class two";
+           cout << "Enter values of x and y for class two :";
             cin >> x >> y;
         }
-        friend int display(one a,one);  //Friend function declaration with keyword friend and argument as object
+        friend int display(one a,two b);  //Friend function declaration with keyword friend and argument as object
 
 };
-int display(one a,one b){         //non-member function
+int display(one a,two b){         //non-member function
     return a.x+b.x;
+    return a.y+b.y;;
 }
 int main(){
 one a;      //object
 two b;
 a.getdata();
 b.getdata();
+cout << display(a,b);
 cout << display(a,b);
 }
