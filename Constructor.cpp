@@ -1,4 +1,8 @@
 //--->>Constructor
+    /*Special member function
+     Initializes object 
+    Name same as class name */
+    
 #include <iostream>
 #include <string>
 using namespace std;
