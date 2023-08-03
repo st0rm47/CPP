@@ -48,10 +48,10 @@
 
 #include<iostream>
 using namespace std;
-class naya {
+class naya {        //class
     int a,b;
     public:
-        naya(){
+        naya(){     //constructor
             cout << "Enter values of a and b: ";
             cin >> a >> b;
             cout << a << endl << b;
@@ -59,5 +59,5 @@ class naya {
 
 };
 int main(){
-    naya n;
+    naya n;         //object created
 }
