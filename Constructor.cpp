@@ -24,22 +24,40 @@
 //     return 0;
 // }
 
+// #include<iostream>
+// using namespace std;
+// class test{
+//     int x,y;
+//     public:
+//         test(){     //constructor
+        
+//             x=5;
+//             y=10;
+//         }
+//         void show(){
+//             cout << x << endl << y;
+
+//         }
+// };
+// int main(){
+//     test t;
+//     t.show();
+// }
+
+
+
 #include<iostream>
 using namespace std;
-class test{
-    int x,y;
+class naya {
+    int a,b;
     public:
-        test(){     //constructor
-        
-            x=5;
-            y=10;
+        naya(){
+            cout << "Enter values of a and b: ";
+            cin >> a >> b;
+            cout << a << endl << b;
         }
-        void show(){
-            cout << x << endl << y;
 
-        }
 };
 int main(){
-    test t;
-    t.show();
+    naya n;
 }
