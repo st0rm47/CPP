@@ -83,3 +83,26 @@ int main(){
     naya n2(4,5);
     return 0;
 }
+
+
+// --->> Copy Constructor
+// 1.
+ #include<iostream>
+using namespace std;
+class test{
+    int x,y;
+    public:
+    test(){
+        cout << "Enter the value of x: ";
+        cin >> x;
+    }
+    test (test &t)
+    {
+        cout << t.x;
+    }
+};
+int main (){
+    test t1;
+    test t2=t1;
+    // test t2(t1);
+}
