@@ -34,6 +34,6 @@ one a;      //object
 two b;
 a.getdata();
 b.getdata();
-cout << display(a,b);
+cout << display(a,b) << endl;
 cout << display(a,b);
 }
