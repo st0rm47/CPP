@@ -1,129 +1,67 @@
-// // // /* Create a class named "Programming" */
-// // #include <iostream>
-// // #include <string>
-// // using namespace std;
-// // class Programming {
-// // private:
-// //     string name;
-// // public:
-// //     Programming() {
-// //         cout << "I love C++ " << endl;
-// //     }
-// //     Programming(string name) { // constructor
-// //         cout << "I love " << name;
-// //     }
-// // };
-// // int main() {
-// //     string name;
-// //     cin >> name;
-// //     if (name.length()>1) { // Check if the string is empty
-// //         Programming programming(name);
-// //     } else {
-// //         Programming ();
-// //     }
-// //     return 0;
-// // }
+// /* Create a class named "Programming" */
+#include <iostream>
+#include <string>
+using namespace std;
+class Programming {
+private:
+    string name;
+public:
+    Programming() {
+        cout << "I love C++ " << endl;
+    }
+    Programming(string name) { // constructor
+        cout << "I love " << name;
+    }
+};
+int main() {
+    string name;
+    cin >> name;
+    if (name.length()>1) { // Check if the string is empty
+        Programming programming(name);
+    } else {
+        Programming ();
+    }
+    return 0;
+}
 
 
 
 //Create a piggie bank
 #include<iostream>
 using namespace std;
+
 class addamount{
     private:
         int a;
+        int balance = 50;   // Initial balance is 50
     public:
-        int size=50;
-        addamount(){
+        
+        addamount(){        // Default Constructor adding no amount to the Piggie Bank
             
         }
-        addamount(int a){
-            cout << a << " is added to the Piggie Bank " << endl;
-            size=size+a;  
+        addamount(int a){   // Constructor to add the amount to existing balance
+            balance += a;   
         }
-        void showdata();
-    
+        void deposit(int a) {
+            if (a > 0) {
+                cout << a << " is added to the Piggy Bank" << endl;
+            } 
+            else {
+                cout << "No amount will be added to the Piggy Bank." << endl;
+            }
+        }
+        int total(){
+            return balance;
+        } 
 };
-void addamount :: showdata(){
-        cout <<"Total amount in piggie bank is " << size ;
-    }
 int main(){
-    addamount s1;
     int a;
     cout << "Enter the amount to be added in a Piggie Bank : ";
     cin >> a;
-    if (a<=0){
-        cout << "No amount will be added to the Piggie Bank." << endl;
-    } else {
-        addamount addamount(a);
-    }
+    addamount s1(a);        //Created an object with the input amount which calls the constructor
+    addamount s2 =s1;       //Created a copy of the object s1
+    s2.deposit(a);          // Deposits the input amount into the copied object
+    cout << "Total amount in Piggy Bank: " << s2.total();   //Displays the total balance
     
-    s1.showdata();
-   
 }
-
-// #include<iostream>
-
-// using namespace std;
-
-// class addAmount{
-
-// public:
-
-// int initialValue=50;
-
-// addAmount(){
-
-
-// }
-
-// addAmount(int a){
-
-// initialValue=a+initialValue;
-
-// }
-
-// addAmount(addAmount &b){
-
-// initialValue=b.initialValue;
-
-// cout<<"the final amount is: "<<initialValue<<endl;
-
-// }
-
-// };
-
-// int main(){
-
-
-// int a;
-
-//  cout<<"enter the amount you want to add: "<<endl;
-
-//  cin>>a;
-
-//  addAmount o1,o2(a);
-
-
-//  if (a==0) {
-
-//  cout << "No value will be added to the piggy bank" << endl;
-
-//  o1;
-
-
-//  } else {
-
-
-// o2;
-//  }
-
-// addAmount o3=o2;
-
-// return 0;
-
-
-// }
-
-
 
