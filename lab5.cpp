@@ -26,7 +26,7 @@ int main() {
 
 
 
-//Create a piggie bank
+/*Create a piggie bank */
 #include<iostream>
 using namespace std;
 
