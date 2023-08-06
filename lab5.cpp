@@ -1,4 +1,4 @@
-// /* Create a class named "Programming" */
+ /* Create a class named "Programming" */
 #include <iostream>
 #include <string>
 using namespace std;
@@ -9,7 +9,7 @@ public:
     Programming() {
         cout << "I love C++ " << endl;
     }
-    Programming(string name) { // constructor
+    Programming(string name) {
         cout << "I love " << name;
     }
 };
@@ -17,9 +17,9 @@ int main() {
     string name;
     cin >> name;
     if (name.length()>1) { // Check if the string is empty
-        Programming programming(name);
+        Programming programming(name);  //Create an object with the parameterized constructor
     } else {
-        Programming ();
+        Programming (); // Create an object using the default constructor
     }
     return 0;
 }
