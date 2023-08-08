@@ -35,7 +35,6 @@ class addamount{
         int a;
         int balance = 50;   // Initial balance is 50
     public:
-        
         addamount(){        // Default Constructor adding no amount to the Piggie Bank
             
         }
