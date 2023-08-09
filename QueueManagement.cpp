@@ -37,7 +37,6 @@ class Queue {       //Class Declaration
 	void add(int x){
 		size+=1;        //Adding a new data means number of elements is increased
 		queue[size-1]=x;    //The new data is placed at the end of the queue
-
 	}
 }; 
 
