@@ -29,7 +29,6 @@ int main() {
 /*Create a piggie bank */
 #include<iostream>
 using namespace std;
-
 class addamount{
     private:
         int a;
