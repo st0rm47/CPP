@@ -2,16 +2,19 @@
 using namespace std;
 
 class exam{
-    int x;
+    int x;  //data member
     public:
-    exam(){
-        x=10;
-        cout<<x<<endl;
-    }
-    void display(int x){
-        this -> x =x;
-        cout<< this -> x<<endl;
-    }
+        exam(){
+            x=10;
+            cout<<x<<endl;
+        }
+        void display(int x){
+            cout << this->x << endl;
+                //Shows the value of data member
+            this -> x =x;
+            cout<< this -> x<<endl;
+                //Shows the value given by the function in main function
+        }
 };
 
 int main (){
