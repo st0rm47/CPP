@@ -49,7 +49,7 @@ class test{
            a.count=count;       // Object value is set to the new updated value
            return a;            // return the value of object with new value
         }
-          test operator ++(int){     //Pre-increment operator
+        test operator ++(int){     //Pre-increment operator
            count++;
            test a;              //Object of class test
            a.count=count;       // Object value is set to the new updated value
