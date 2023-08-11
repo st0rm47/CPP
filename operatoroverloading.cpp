@@ -10,7 +10,7 @@ class test{
             cout << count << endl;
         }
         void operator ++(){     //Pre-increment operator
-            count++;
+           ++count;
         }
         void operator ++ (int){     //Post-increment operator
             count++;
