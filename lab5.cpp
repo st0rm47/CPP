@@ -42,7 +42,7 @@ class addamount{
         }
         void deposit(int a) {
             if (a > 0) {
-                cout << a << " is added to the Piggy Bank" << endl;
+                cout << "$" << a << " is added to the Piggy Bank" << endl;
             } 
             else {
                 cout << "No amount will be added to the Piggy Bank." << endl;
@@ -59,7 +59,7 @@ int main(){
     addamount s1(a);        //Created an object with the input amount which calls the constructor
     addamount s2 =s1;       //Created a copy of the object s1
     s2.deposit(a);          // Deposits the input amount into the copied object
-    cout << "Total amount in Piggy Bank: " << s2.total();   //Displays the total balance
+    cout << "Total amount in Piggy Bank: $" << s2.total();   //Displays the total balance
     
 }
 
