@@ -78,8 +78,8 @@ int main() {
 
 /*3. Suppose you have a Piggie Bank with an initial amount of $50 and you have to add some more amount to it. 
 Create a class ‘addamount’ with an initial value of 50. Now make two constructor showing,
-i) No amount will be added to the Piggie Bank.
-ii) Having a parameter which is the amount that will be added to the Piggie Bank.
+    i) No amount will be added to the Piggie Bank.
+    ii) Having a parameter which is the amount that will be added to the Piggie Bank.
 Copy this amount and store it in another object after adding the amount and display final amount through copied object.*/
 
 #include<iostream>
