@@ -30,9 +30,9 @@ int main() {
 
 /*Create a class named "Rectangle" with two data members lenghth and breadth and a function to claculate area.
  The class has three constructors.
-i) Having no parameter-values  of both length and breasth are assigned zero.
-ii) Having two numbers as parameters the two numbers are assigned as length and breadth respectively.
-iii) Having one number as parameter both length and breadth are assigned that number.
+    i) Having no parameter-values  of both length and breasth are assigned zero.
+    ii) Having two numbers as parameters the two numbers are assigned as length and breadth respectively.
+    iii) Having one number as parameter both length and breadth are assigned that number.
 Now, create objects of the 'Rectangle' class having none, one and two parameters and print their areas.*/
 
 #include<iostream>
