@@ -64,7 +64,6 @@ int main(){
 
     t1++;                // Increment t using post-increment operator
     t1.display();       // Display the value of t1 as 2
-
     t2=++t1;            // Set the value of new object as same as 1st object
     t1.display();       // Display the value of t1 as 3
     t2.display();           // Display the value of t2 as 3
