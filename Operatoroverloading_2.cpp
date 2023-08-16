@@ -40,10 +40,8 @@ int main() {
 
     // Input real and imaginary parts for objects a and b
     a.getdata();
-    a.showdata();
-
     b.getdata();
-    b.showdata();
+
 
     // Use the overloaded + operator to add a and b, and store the result in c
     c = a + b;
