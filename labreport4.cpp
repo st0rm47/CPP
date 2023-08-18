@@ -142,6 +142,10 @@ int main() {
     c.showdata();
 }
 
-//Streak 
+
 
 /* 5. WAP overloading <= operator which in turn can be used for user defined object for a class "distance" to compare two distance objects.*/
+#include<iostream>
+using namespace std;
+
+class 
