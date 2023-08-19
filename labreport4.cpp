@@ -122,7 +122,6 @@ public:
         cout << "The sum is " << real << " + " << imaginary << "i" << endl;
     }
 
-    // Overloaded + operator for complex number addition using friend function
     friend complex operator+(complex a, complex b) {
         complex temp;
         temp.real = a.real + b.real;
@@ -130,15 +129,11 @@ public:
         return temp;
     }
 };
-
 int main() {
     complex a, b, c;
     a.getdata();
     b.getdata();
-
-    // Use the overloaded + operator to add a and b, and store the result in c
     c = a + b;
-
     c.showdata();
 }
 
