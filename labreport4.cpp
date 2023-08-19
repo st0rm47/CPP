@@ -11,10 +11,10 @@ public:
     void display(){
         cout << count << endl;
     }
-    void operator ++(){     //Pre-increment operator
+    void operator ++(){     
         ++count;
     }
-    void operator -- (int){     //Post-decrement operator
+    void operator -- (int){     
         count--;
     }
 };
