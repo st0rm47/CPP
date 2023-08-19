@@ -2,30 +2,29 @@
 #include<iostream>
 using namespace std;
 class test{
+private:
     int count;
-    public:
-        test(){
-            count=0;
-        }
-        void display(){
-            cout << count << endl;
-        }
-        void operator ++(){     //Pre-increment operator
-           ++count;
-        }
-        void operator -- (int){     //Post-decrement operator
-            count--;
-        }
+public:
+    test(){
+        count=0;
+    }
+    void display(){
+        cout << count << endl;
+    }
+    void operator ++(){     //Pre-increment operator
+        ++count;
+    }
+    void operator -- (int){     //Post-decrement operator
+        count--;
+    }
 };
 int main(){
-    test t;             // Object of clss test
-    t.display();       // Display the value of t as 0
-
-    ++t;                // Increment t using pre-increment operator
-    t.display();       // Display the value of t as 1
-
-    t--;                // Increment t using post-increment operator
-    t.display();       // Display the value of t as 0
+    test t;             
+    t.display();       
+    ++t;                
+    t.display();       
+    t--;                
+    t.display();       
 }
 
 
@@ -47,8 +46,6 @@ public:
     void showdata() {
         cout << "The sum is " << real << " + " << imaginary << "i" << endl;
     }
-
-    // Overloaded + operator for complex number addition
     complex operator+(complex a) {
         complex temp;
         temp.real = real + a.real;
@@ -60,10 +57,7 @@ int main() {
     complex a, b, c;
     a.getdata();
     b.getdata();
-
-    // Use the overloaded + operator to add a and b, and store the result in c
     c = a + b;
-
     c.showdata();
 }
 
@@ -73,27 +67,27 @@ int main() {
 #include<iostream>
 using namespace std;
 class str{
-    private:
-        string name;
-    public:
-        str(){
-            name=" ";
-        }
-        str(string b){
-            name=b;
-        }
-        void getdata() {
-            cout << "Enter a string: ";
-            cin >> name;
-        }
-        void show(){
-            cout << name;
-        }
-        str operator +(str a){
-            str temp;
-            temp.name=name+a.name;
-            return temp;
-        }
+private:
+    string name;
+public:
+    str(){
+        name=" ";
+    }
+    str(string b){
+        name=b;
+    }
+    void getdata() {
+        cout << "Enter a string: ";
+        cin >> name;
+    }
+    void show(){
+        cout << name;
+    }
+    str operator +(str a){
+        str temp;
+        temp.name=name+a.name;
+        return temp;
+    }
 };
 int main(){
     str a,b,c;
@@ -121,7 +115,6 @@ public:
     void showdata() {
         cout << "The sum is " << real << " + " << imaginary << "i" << endl;
     }
-
     friend complex operator+(complex a, complex b) {
         complex temp;
         temp.real = a.real + b.real;
