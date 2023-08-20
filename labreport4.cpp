@@ -150,29 +150,41 @@ int main() {
 /* 5. WAP overloading <= operator which in turn can be used for user defined object for a class "distance" to compare two distance objects.*/
 #include<iostream>
 using namespace std;
-class dis{
-private:
-    int value;
+class dist {
 public:
-    dis(int val){
-        value=val;
+    int dis;
+    int op;
+    dist() {
+        dis = 0;
+        op = 0;
     }
-    dis operator >= (dis other){
-        if (value>other.value)
-            return value;
-        else
-            return other.value;
+    void getdistance() {
+        cout << "Enter the distance: ";
+        cin >> dis;
     }
-    int getvalue(){
-        return value;
+    dist operator<=(dist b) {
+        if (dis == b.dis) {
+            op = 0;
+        } else if (dis > b.dis) {
+            op = 1;
+        } else {
+            op = -1;
+        }
+        return *this;
     }
 };
+int main() {
+    dist d1, d2, d3;
+    d1.getdistance();
+    d2.getdistance();
+    d3 = d1 <= d2;
 
-int main(){
-    dis num1(5);
-    dis num2(10);
-
-    dis result=num1>=num2;
-
-    cout << "The greater number is: " << result.getvalue() << endl;
+    if (d3.op == 0) {
+        cout << "Both distance are equal." << d1.dis << endl;
+    } else if (d3.op == 1) {
+        cout << "First distance is greater than the second, i.e. " << d1.dis << " > " << d2.dis << endl;
+    } else {
+        cout << "Second distance is greater than the first, i.e. " << d2.dis << " > " << d1.dis << endl;
+    }
+    return 0;
 }
