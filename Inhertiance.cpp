@@ -69,6 +69,28 @@
 
     one grandparent,two parent and one child */
 
-    
 
+//Function Overriding or Ambuigity
+#include<iostream>
+using namespace std;   
+class A{
+    int a;
+    public:
+    void show(){        //Overridden Function
+        cout <<"a";
+    }
+};
+class B:public A{
+    int b;
+    public:
+    void show(){        //Overiding Function
+        cout << "b";
+        /* A::show();      //to overcome Ambuigity */
+    }
+};
+int main(){
+    B b;
+    b.show();
+    b.A::show();        //To overcome Ambuigity
+}
     
