@@ -70,27 +70,35 @@
     one grandparent,two parent and one child */
 
 
-//Function Overriding or Ambuigity
+// C++ program to show inheritance ambiguity
 #include<iostream>
-using namespace std;   
-class A{
-    int a;
-    public:
-    void show(){        //Overridden Function
-        cout <<"a";
-    }
+using namespace std;
+class A {
+	public:
+	void func() {
+		cout << " I am in class A" << endl;
+	}
 };
-class B:public A{
-    int b;
-    public:
-    void show(){        //Overiding Function
-        cout << "b";
-        /* A::show();      //to overcome Ambuigity */
-    }
+class B {
+	public:
+	void func() {
+		cout << " I am in class B" << endl;
+	}
 };
-int main(){
-    B b;
-    b.show();
-    b.A::show();        //To overcome Ambuigity
+class C: public A, public B {
+
+};
+int main() {
+	C obj;
+	/* obj.func();     //shows ambiguity */
+
+    // Calling function func() in class A
+    obj.A::func();
+ 
+    // Calling function func() in class B
+    obj.B::func();
+ 
+	return 0;
 }
+
     
