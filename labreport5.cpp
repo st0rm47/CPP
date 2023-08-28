@@ -87,12 +87,11 @@ class celsius{
 private:
     float c;
 public:
-    celsius(){
-        c=0;
-    }
     celsius(int x){
         c=x;
     }
+
+    //Operator function in Source class
     operator fahrenheit (){
        return fahrenheit((c*9/5) + 32);
     }
