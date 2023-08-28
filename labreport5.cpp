@@ -39,29 +39,107 @@
 //     return 0;
 // }
 
-/*Conversion from user-defined data type to basic data type*/
+// /*Conversion from user-defined data type to basic data type*/
+// #include<iostream>
+// using namespace std;
+// class dist{
+// private:
+//     int meter;
+//     int centimeter;
+// public:
+//     dist(){
+//         meter=0;
+//         centimeter=0;
+//     }
+//     dist(int m,int cm){
+//         meter=m;
+//         centimeter=cm;
+//     }
+//     // Conversion operator to convert dist to int
+//     operator int(){
+//         return meter*100+centimeter;
+//     }
+// };
+// int main(){
+//     dist d1(1,30);
+//     int x=d1;
+//     cout << "Distance = " << x << " centimeters" << endl;
+// }
+
+/*Conversion from user defined data type to another user defined data type (source)*/
 #include<iostream>
 using namespace std;
-class dist{
+class fahrenheit{
 private:
-    int meter;
-    int centimeter;
+    float f;
 public:
-    dist(){
-        meter=0;
-        centimeter=0;
+    fahrenheit(){
+        f=0;
     }
-    dist(int m,int cm){
-        meter=m;
-        centimeter=cm;
+    fahrenheit(int x){
+        f=x;
     }
-    // Conversion operator to convert dist to int
-    operator int(){
-        return meter*100+centimeter;
+    void show(){
+        cout << "Temperature in Fahrenheit: " << f << endl;
+    }
+};
+class celsius{
+private:
+    float c;
+public:
+    celsius(){
+        c=0;
+    }
+    celsius(int x){
+        c=x;
+    }
+    operator fahrenheit (){
+       return fahrenheit((c*9/5) + 32);
     }
 };
 int main(){
-    dist d1(1,30);
-    int x=d1;
-    cout << "Distance = " << x << " centimeters" << endl;
+    fahrenheit f;  
+    celsius c(37);
+    f=c;
+    f.show();
+    return 0;
+}
+
+/*Conversion from user defined data type to another user defined data type (source)*/
+#include<iostream>
+using namespace std;
+class fahrenheit{
+private:
+    float f;
+public:
+    fahrenheit(){
+        f=0;
+    }
+    fahrenheit(int x){
+        f=x;
+    }
+    void show(){
+        cout << "Temperature in Fahrenheit: " << f << endl;
+    }
+};
+class celsius{
+private:
+    float c;
+public:
+    celsius(){
+        c=0;
+    }
+    celsius(int x){
+        c=x;
+    }
+    operator fahrenheit (){
+       return fahrenheit((c*9/5) + 32);
+    }
+};
+int main(){
+    fahrenheit f;  
+    celsius c(37);
+    f=c;
+    f.show();
+    return 0;
 }
