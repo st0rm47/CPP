@@ -1,12 +1,40 @@
-/*wap converting  basic datatype  to basic datatype*/
+// /*Conversion from basic distance type to anoyher basic distance type*/
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int x;
+//     float y=23.4;
+//     /*x=int(y);    //Explicit Conversion */
+//     x=y;        //Implicit Conversion   //Converted into integer type
+//    cout << "The value of x is: "<< x << endl;
+// }
+
+
+/*Conversion from basic data type to userdefined data type*/
 #include<iostream>
 using namespace std;
-void data(){
-    int x;
-   float y=2.09;
-   x=y;                                      //converted into int type
-   cout<<"the value of x is: "<<x<<endl;
-}
+
+class dist{
+private:
+    int meter;
+    int centimeter;
+public:
+    dist(){
+        meter=0;
+        centimeter=0;
+    }
+    dist(int m){
+        meter=m/100;
+        centimeter=m%100;
+    }
+    void display(){
+        cout << "Distance = " <<  meter << " meter and " << centimeter << " centimeters" << endl;
+    }
+};
 int main(){
-    data();
+    dist d1;
+    int x=120;
+    d1=x;
+    d1.display();
+    return 0;
 }

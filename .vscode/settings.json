@@ -57,7 +57,10 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "files.associations": {
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "array": "cpp",
+    "string": "cpp",
+    "string_view": "cpp"
   },
   "githubPullRequests.ignoredPullRequestBranches": [
     "main"
