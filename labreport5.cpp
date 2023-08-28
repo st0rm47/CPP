@@ -1,4 +1,4 @@
-// /*Conversion from basic distance type to anoyher basic distance type*/
+// /*Conversion from basic data type to anoyher basic data type*/
 // #include<iostream>
 // using namespace std;
 // int main(){
