@@ -51,7 +51,6 @@ Print the number of fruits of each type and total no. of fruits in the basket.*/
 
 #include<iostream>
 using namespace std;
-
 class Fruit{
     int numFruits;
 
@@ -64,7 +63,6 @@ class Fruit{
         return numFruits;
     }
 };
-
 class Mangoes: public Fruit{
     int nummangoes;
     public:
@@ -73,7 +71,6 @@ class Mangoes: public Fruit{
         cout<<"Number of mangoes: "<<get_num()<<endl;
     }
 };
-
 class Apples: public Fruit{
     public:
     Apples(int num): Fruit(num){}
@@ -82,7 +79,6 @@ class Apples: public Fruit{
         cout<<"Number of apples: "<<get_num()<<endl;
     }
 };
-
 int main (){
     Mangoes mango_object(5); //5 mangoes
     Apples apple_object(3); // 3 mangoes
