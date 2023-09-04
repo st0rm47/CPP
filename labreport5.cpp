@@ -67,7 +67,8 @@ int main(){
 }
 
 
-// /*Conversion from user defined data type to another user defined data type (source)*/
+/*Conversion from user defined data type to another user defined data type (source)*/
+//Celsius to Fahrenheit
 #include<iostream>
 using namespace std;
 class fahrenheit{
@@ -107,6 +108,7 @@ int main(){
 
 
 // /*Conversion from user defined data type to another user defined data type (destination)*/
+//Fahrenheit To celsius
 #include<iostream>
 using namespace std;
 class fahrenheit{
