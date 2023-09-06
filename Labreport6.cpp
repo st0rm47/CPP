@@ -36,7 +36,7 @@ using namespace std;
 class College{
     public:
     void show(){
-        cout << "This is Madan Bhandari Memorial College" << endl;
+        cout << "We are from Madan Bhandari Memorial College" << endl;
     }
 };
 class Batch : public College{
@@ -48,8 +48,8 @@ class Batch : public College{
 
 int main(){
     Batch b;
-    b.show(); //Calling member function from class CSIT
-    b.College::show(); //Accessing class College through class CSIT
+    b.show(); //Calling member function from class Batch
+    b.College::show(); //Accessing class College through class Batch
     return 0;
 }
 /*3. WAP to abstract class using concept of pure virtual function.*/
@@ -57,42 +57,42 @@ int main(){
 /*4. WAP to illustrate the use of virtual function.*/
 
 /*5. WAP to solve ambiguity problem in multipath inheritance with the concept of virtual class.*/
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-class Person {
-public:
-    void showdata() {
-        cout << "Name = Subodh" << endl;
-    }
-};
+// class Person {
+// public:
+//     void showdata() {
+//         cout << "Name = Subodh" << endl;
+//     }
+// };
 
-class Employee : virtual public Person {
-public:
-    void showdata() {
-        cout << "Salary = 40,000 " << endl;
-    }
-};
+// class Employee : virtual public Person {
+// public:
+//     void showdata() {
+//         cout << "Salary = 40,000 " << endl;
+//     }
+// };
 
-class Student : virtual public Person {
-public:
-    void showdata() {
-        cout << "ID = 23 " << endl;
-    }
-};
+// class Student : virtual public Person {
+// public:
+//     void showdata() {
+//         cout << "ID = 23 " << endl;
+//     }
+// };
 
-class TuitionTeacher : public Employee, public Student {
-public:
-    void showdata() {
-        Person::showdata();    // Specify the class scope to resolve ambiguity
-        Employee::showdata();  // Specify the class scope to resolve ambiguity
-        Student::showdata();   // Specify the class scope to resolve ambiguity
-        cout << "Course = BSc. CSIT " << endl;
-    }
-};
+// class TuitionTeacher : public Employee, public Student {
+// public:
+//     void showdata() {
+//         Person::showdata();    // Specify the class scope to resolve ambiguity
+//         Employee::showdata();  // Specify the class scope to resolve ambiguity
+//         Student::showdata();   // Specify the class scope to resolve ambiguity
+//         cout << "Course = BSc. CSIT " << endl;
+//     }
+// };
 
-int main() {
-    TuitionTeacher tt;
-    tt.showdata();
-    return 0;
-}
+// int main() {
+//     TuitionTeacher tt;
+//     tt.showdata();
+//     return 0;
+// }
