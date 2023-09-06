@@ -1,33 +1,33 @@
-/*1. WAP to resolve ambiguity in multiple inheritance.*/
-#include<iostream>
-using namespace std;
-class A {
-	public:
-	void show() {
-		cout << " I am in class A" << endl;
-	}
-};
-class B {
-	public:
-	void show() {
-		cout << " I am in class B" << endl;
-	}
-};
-class C: public A, public B {
-public:
-    // Member function in class C, which overrides the show() method
-    void show() {
-        // Call the show() method of class A using A::show()
-        A::show();
-        // Call the show() method of class B using B::show()
-        B::show();
-    }
-};
-int main() {
-	C obj;
-    obj.show();
-	return 0;
-}
+// /*1. WAP to resolve ambiguity in multiple inheritance.*/
+// #include<iostream>
+// using namespace std;
+// class A {
+// 	public:
+// 	void show() {
+// 		cout << " I am in class A" << endl;
+// 	}
+// };
+// class B {
+// 	public:
+// 	void show() {
+// 		cout << " I am in class B" << endl;
+// 	}
+// };
+// class C: public A, public B {
+// public:
+//     // Member function in class C, which overrides the show() method
+//     void show() {
+//         // Call the show() method of class A using A::show()
+//         A::show();
+//         // Call the show() method of class B using B::show()
+//         B::show();
+//     }
+// };
+// int main() {
+// 	C obj;
+//     obj.show();
+// 	return 0;
+// }
 
 
 // /*2. WAP to illustrate concept of function overriading.*/
@@ -36,20 +36,20 @@ using namespace std;
 class College{
     public:
     void show(){
-        cout << "This is MBM College" << endl;
+        cout << "This is Madan Bhandari Memorial College" << endl;
     }
 };
-class CSIT: public College{
+class Batch : public College{
     public:
     void show(){   
-        cout<<"This is CSIT stream"<<endl;
+        cout<<"This is 2079 Batch"<<endl;
     }
 };
 
 int main(){
-    CSIT c;
-    c.show(); //Calling member function from class CSIT
-    c.College::show(); //Accessing class College through class CSIT
+    Batch b;
+    b.show(); //Calling member function from class CSIT
+    b.College::show(); //Accessing class College through class CSIT
     return 0;
 }
 /*3. WAP to abstract class using concept of pure virtual function.*/
