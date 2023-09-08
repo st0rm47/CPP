@@ -17,6 +17,7 @@ class exam{
         }
 };
 
+
 int main (){
     exam e;
     e.display(2);
