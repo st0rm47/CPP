@@ -1,33 +1,33 @@
-// /*1. WAP to resolve ambiguity in multiple inheritance.*/
-// #include<iostream>
-// using namespace std;
-// class A {
-// public:
-// 	void show() {
-// 		cout << "I love JavaScript" << endl;
-// 	}
-// };
-// class B {
-// public:
-// 	void show() {
-// 		cout << "I love C++" << endl;
-// 	}
-// };
-// class coding: public A, public B{
-// public:
-//     // Member function in class C, which overrides the show() method
-//     void show() {
-//         // Call the show() method of class A using A::show()
-//         A::show();
-//         // Call the show() method of class B using B::show()
-//         B::show();
-//     }
-// };
-// int main() {
-//     coding c;
-//     c.show();
-// 	return 0;
-// }
+/*1. WAP to resolve ambiguity in multiple inheritance.*/
+#include<iostream>
+using namespace std;
+class A {
+public:
+	void show() {
+		cout << "I love JavaScript" << endl;
+	}
+};
+class B {
+public:
+	void show() {
+		cout << "I love C++" << endl;
+	}
+};
+class coding: public A, public B{
+public:
+    // Member function in class C, which overrides the show() method
+    void show() {
+        // Call the show() method of class A using A::show()
+        A::show();
+        // Call the show() method of class B using B::show()
+        B::show();
+    }
+};
+int main() {
+    coding c;
+    c.show();
+	return 0;
+}
 
 
 // /*2. WAP to illustrate concept of function overriading.*/
@@ -81,6 +81,44 @@ int main(){
 
 
 // /*4. WAP to illustrate the use of virtual function.*/
+//WAP to illustrate the use of virtual function
+#include<iostream>
+using namespace std;
+
+class animal{
+public:
+    virtual void makesound() const{ //default virtual function
+        cout<<"Animal sounds: "<<endl;
+    }
+};
+
+class Dog: public animal{
+public:
+    void makesound() const{
+        cout<<"Dog: Woff Woff!"<<endl;
+    }
+};
+
+class Cat: public animal{
+public:
+    void makesound() const{
+        cout<<"Cat: Meow :)"<<endl;
+    }
+};
+
+int main(){
+    //Creating objects
+    animal a;
+    Dog d;
+    Cat c;
+
+    //display
+    a.makesound();
+    d.makesound();
+    c.makesound();
+
+    return 0;
+}
 
 // /*5. WAP to solve ambiguity problem in multipath inheritance with the concept of virtual class.*/
 // #include<iostream>
