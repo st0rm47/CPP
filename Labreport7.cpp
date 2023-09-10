@@ -80,78 +80,90 @@ int main(){
 
 
 
-// // /*4. WAP to illustrate the use of virtual function.*/
-// //WAP to illustrate the use of virtual function
-// #include<iostream>
-// using namespace std;
+/*4. WAP to illustrate the use of virtual function.*/
+#include <iostream>
+using namespace std;
+class College {
+public:
+    virtual void faculty() {
+        cout << "We are experienced in following faculties: " << endl;
+    }
+};
+class CSIT : public College {
+public:
+    void faculty(){
+        cout << "CSIT = Computer Science and Information Technology" << endl;
+    }
+};
+class BCA : public College {
+public:
+    void faculty(){
+        cout << "BCA = Bachelor of Computer Appllications" << endl;
+    }
+};
+int main(){
+    // Declare a base class pointer 'a' and objects of derived classes
+    College *a, c;
+    BCA b;
+    CSIT cs;
+      
+    // Point 'a' to object 'c' and call faculty
+    a = &c;
+    a->faculty();
 
-// class animal{
-// public:
-//     virtual void makesound() const{ //default virtual function
-//         cout<<"Animal sounds: "<<endl;
-//     }
-// };
+    // Point 'a' to object 'cs' and call faculty
+    a = &cs;
+    a->faculty();
 
-// class Dog: public animal{
-// public:
-//     void makesound() const{
-//         cout<<"Dog: Woff Woff!"<<endl;
-//     }
-// };
+    // Point 'a' to object 'b' and call faculty
+    a = &b;
+    a->faculty();
+    return 0;
+}
 
-// class Cat: public animal{
-// public:
-//     void makesound() const{
-//         cout<<"Cat: Meow :)"<<endl;
-//     }
-// };
+/*5. WAP to solve ambiguity problem in multipath inheritance with the concept of virtual class.*/
+#include<iostream>
+using namespace std;
+class Person {
+public:
+    void display(){
+        cout << "Name = Subodh Ghimire" << endl;
+    }
+};
 
-// int main(){
-//     //Creating objects
-//     animal a;
-//     Dog d;
-//     Cat c;
+// Derived class Employee, inheriting virtually from Person
+class Employee : virtual public Person {
+public:
+    void display() {
+        cout << "Salary = 40,000 " << endl;
+    }
+};
 
-//     //display
-//     a.makesound();
-//     d.makesound();
-//     c.makesound();
+// Derived class Student, inheriting virtually from Person
+class Student : virtual public Person {
+public:
+    void display() {
+        cout << "ID = 23 " << endl;
+    }
+};
 
-//     return 0;
-// }
+class TuitionTeacher : public Employee, public Student {
+public:
+    void display() {
+        // Call the display function from the Person class
+        Person::display();   
 
-// // /*5. WAP to solve ambiguity problem in multipath inheritance with the concept of virtual class.*/
-// // #include<iostream>
-// // using namespace std;
-// // class Person {
-// // public:
-// //     void display(){
-// //         cout << "Name = Subodh Ghimire" << endl;
-// //     }
-// // };
-// // class Employee : virtual public Person {
-// // public:
-// //     void display() {
-// //         cout << "Salary = 40,000 " << endl;
-// //     }
-// // };
-// // class Student : virtual public Person {
-// // public:
-// //     void display() {
-// //         cout << "ID = 23 " << endl;
-// //     }
-// // };
-// // class TuitionTeacher : public Employee, public Student {
-// // public:
-// //     void display() {
-// //         Person::display();    // Specify the class scope to resolve ambiguity
-// //         Employee::display();  // Specify the class scope to resolve ambiguity
-// //         Student::display();   // Specify the class scope to resolve ambiguity
-// //         cout << "Course = BSc. CSIT " << endl;
-// //     }
-// // };
-// // int main() {
-// //     TuitionTeacher t1;
-// //     t1.display();
-// //     return 0;
-// // }
+        // Call the display function from the Employee class
+        Employee::display(); 
+
+        // Call the display function from the Student class 
+        Student::display();   
+
+        cout << "Course = BSc. CSIT " << endl;
+    }
+};
+int main() {
+    TuitionTeacher t1;
+    t1.display();
+    return 0;
+}
