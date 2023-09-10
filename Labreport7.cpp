@@ -30,27 +30,27 @@ int main() {
 }
 
 
-// /*2. WAP to illustrate concept of function overriading.*/
-// #include<iostream>
-// using namespace std;
-// class College{
-// public:
-//     void show(){
-//         cout << "This is Madan Bhandari Memorial College" << endl;
-//     }
-// };
-// class Batch : public College{
-// public:
-//     void show(){   
-//         cout <<"We are 2079 Batch" << endl;
-//     }
-// };
-// int main(){
-//     Batch b;
-//     b.show(); //Calling member function from class Batch
-//     b.College::show(); //Accessing class College through class Batch
-//     return 0;
-// }
+/*2. WAP to illustrate concept of function overriading.*/
+#include<iostream>
+using namespace std;
+class College{
+public:
+    void show(){
+        cout << "This is Madan Bhandari Memorial College" << endl;
+    }
+};
+class Batch : public College{
+public:
+    void show(){   
+        cout <<"We are 2079 Batch" << endl;
+    }
+};
+int main(){
+    Batch b;
+    b.show(); //Calling member function from class Batch
+    b.College::show(); //Accessing class College through class Batch
+    return 0;
+}
 
 
 /*3. WAP to abstract class using concept of pure virtual function.*/
@@ -80,78 +80,78 @@ int main(){
 
 
 
-// /*4. WAP to illustrate the use of virtual function.*/
-//WAP to illustrate the use of virtual function
-#include<iostream>
-using namespace std;
-
-class animal{
-public:
-    virtual void makesound() const{ //default virtual function
-        cout<<"Animal sounds: "<<endl;
-    }
-};
-
-class Dog: public animal{
-public:
-    void makesound() const{
-        cout<<"Dog: Woff Woff!"<<endl;
-    }
-};
-
-class Cat: public animal{
-public:
-    void makesound() const{
-        cout<<"Cat: Meow :)"<<endl;
-    }
-};
-
-int main(){
-    //Creating objects
-    animal a;
-    Dog d;
-    Cat c;
-
-    //display
-    a.makesound();
-    d.makesound();
-    c.makesound();
-
-    return 0;
-}
-
-// /*5. WAP to solve ambiguity problem in multipath inheritance with the concept of virtual class.*/
+// // /*4. WAP to illustrate the use of virtual function.*/
+// //WAP to illustrate the use of virtual function
 // #include<iostream>
 // using namespace std;
-// class Person {
+
+// class animal{
 // public:
-//     void display(){
-//         cout << "Name = Subodh Ghimire" << endl;
+//     virtual void makesound() const{ //default virtual function
+//         cout<<"Animal sounds: "<<endl;
 //     }
 // };
-// class Employee : virtual public Person {
+
+// class Dog: public animal{
 // public:
-//     void display() {
-//         cout << "Salary = 40,000 " << endl;
+//     void makesound() const{
+//         cout<<"Dog: Woff Woff!"<<endl;
 //     }
 // };
-// class Student : virtual public Person {
+
+// class Cat: public animal{
 // public:
-//     void display() {
-//         cout << "ID = 23 " << endl;
+//     void makesound() const{
+//         cout<<"Cat: Meow :)"<<endl;
 //     }
 // };
-// class TuitionTeacher : public Employee, public Student {
-// public:
-//     void display() {
-//         Person::display();    // Specify the class scope to resolve ambiguity
-//         Employee::display();  // Specify the class scope to resolve ambiguity
-//         Student::display();   // Specify the class scope to resolve ambiguity
-//         cout << "Course = BSc. CSIT " << endl;
-//     }
-// };
-// int main() {
-//     TuitionTeacher t1;
-//     t1.display();
+
+// int main(){
+//     //Creating objects
+//     animal a;
+//     Dog d;
+//     Cat c;
+
+//     //display
+//     a.makesound();
+//     d.makesound();
+//     c.makesound();
+
 //     return 0;
 // }
+
+// // /*5. WAP to solve ambiguity problem in multipath inheritance with the concept of virtual class.*/
+// // #include<iostream>
+// // using namespace std;
+// // class Person {
+// // public:
+// //     void display(){
+// //         cout << "Name = Subodh Ghimire" << endl;
+// //     }
+// // };
+// // class Employee : virtual public Person {
+// // public:
+// //     void display() {
+// //         cout << "Salary = 40,000 " << endl;
+// //     }
+// // };
+// // class Student : virtual public Person {
+// // public:
+// //     void display() {
+// //         cout << "ID = 23 " << endl;
+// //     }
+// // };
+// // class TuitionTeacher : public Employee, public Student {
+// // public:
+// //     void display() {
+// //         Person::display();    // Specify the class scope to resolve ambiguity
+// //         Employee::display();  // Specify the class scope to resolve ambiguity
+// //         Student::display();   // Specify the class scope to resolve ambiguity
+// //         cout << "Course = BSc. CSIT " << endl;
+// //     }
+// // };
+// // int main() {
+// //     TuitionTeacher t1;
+// //     t1.display();
+// //     return 0;
+// // }
