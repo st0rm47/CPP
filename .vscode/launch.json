@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Github/CPP",
-      "program": "d:/Github/CPP/build/Debug/outDebug",
+      "cwd": "d:/Subodh/Github/CPP",
+      "program": "d:/Subodh/Github/CPP/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
