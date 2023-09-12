@@ -24,8 +24,8 @@ int main(){
 #include<iostream>
 using namespace std;
 
-template<class A>
-A maxnum(A a,A b){
+template<typename A,typename B>
+A swap(A a,B b){
     A result;
     result = (a>b)?a:b;
     return result;
