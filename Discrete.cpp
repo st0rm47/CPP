@@ -150,3 +150,66 @@ int main() {
     cout << "}"  << endl;
     return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int maxSize = 100; // Maximum size for sets
+    int set1[maxSize], set2[maxSize], unionSet[maxSize];
+    int n1, n2, element;
+    int unionSize = 0;
+
+    cout << "\t\t========================" << endl;
+    cout << "\t\t   Union of Two Sets    " << endl;
+    cout << "\t\t========================" << endl;
+
+    // Input for the first set
+    cout << "Enter the number of elements in the first set: ";
+    cin >> n1;
+    cout << "Enter the elements of the first set, separated by spaces: ";
+    for (int i = 0; i < n1; ++i) {
+        cin >> element;
+        set1[i] = element;
+    }
+
+    // Input for the second set
+    cout << "Enter the number of elements in the second set: ";
+    cin >> n2;
+    cout << "Enter the elements of the second set, separated by spaces: ";
+    for (int i = 0; i < n2; ++i) {
+        cin >> element;
+        set2[i] = element;
+    }
+
+    // Compute the union of the two sets
+    for (int i = 0; i < n1; ++i) {
+        unionSet[unionSize++] = set1[i];
+    }
+    for (int i = 0; i < n2; ++i) {
+        int isDuplicate = 0;
+        for (int j = 0; j < unionSize; ++j) {
+            if (set2[i] == unionSet[j]) {
+                isDuplicate = 1;
+                break;
+            }
+        }
+        if (!isDuplicate) {
+            unionSet[unionSize++] = set2[i];
+        }
+    }
+
+    // Display the union set
+    cout << "Union of the two sets: {";
+    int first = 1;
+    for (int i = 0; i < unionSize; ++i) {
+        if (unionSet[i] > 0) {
+            cout << (!first ? "," : "") << unionSet[i];
+            first = 0;
+        }
+    }
+    cout << "}" << endl;
+
+    return 0;
+}
