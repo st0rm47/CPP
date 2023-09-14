@@ -131,60 +131,100 @@
 // }
 
 
-/*Difference Set*/
+// /*Difference Set*/
+// #include <iostream>
+// using namespace std;
+
+// int main() 
+// {
+//     const int maxSize = 100;
+//     int set_A[maxSize], set_B[maxSize], differenceSet[maxSize];
+//     int n1, n2, element;
+//     int differenceSize = 0;
+
+//     cout << "\t\t========================" << endl;
+//     cout << "\t\t Difference of Two Sets " << endl;
+//     cout << "\t\t========================" << endl;
+
+//     // Input for the first set
+//     cout << "Enter the number of elements in Set A: ";
+//     cin >> n1;
+//     cout << "Enter the elements of Set A, separated by spaces: ";
+//     for (int i = 0; i < n1; ++i) 
+//     {
+//         cin >> element;
+//         set_A[i] = element;
+//     }
+
+//     // Input for the second set
+//     cout << "Enter the number of elements in Set B: ";
+//     cin >> n2;
+//     cout << "Enter the elements of Set B, separated by spaces: ";
+//     for (int i = 0; i < n2; ++i) 
+//     {
+//         cin >> element;
+//         set_B[i] = element;
+//     }
+
+
+
+//     // Compute the difference between Set A and Set B
+//     for (int i = 0; i < n1; ++i) 
+//     {
+//         int isDifferent = 1;  
+//         for (int j = 0; j < n2; ++j) 
+//         {
+//             if (set_A[i] == set_B[j]) 
+//             {
+//                 isDifferent = 0; 
+//                 break;
+//             }
+//         }
+//         if (isDifferent)
+//             differenceSet[differenceSize++] = set_A[i];
+//     }
+
+//     // Display the difference set
+//     cout << "Difference of Set A - Set B: {";
+//     int first = 1;
+//     for (int i = 0; i < differenceSize; ++i) 
+//     {
+//         cout << (first ? "" : ",") << differenceSet[i];
+//         first = 0;
+//     }
+//     cout << "}" << endl;
+//     return 0;
+// }
+
+/*Floor Function and Ceiling Function*/
 #include <iostream>
 using namespace std;
 
-int main() {
-    const int maxSize = 100;
-    int set_A[maxSize], set_B[maxSize], differenceSet[maxSize];
-    int n1, n2, element;
-    int differenceSize = 0;
+int main() 
+{
+    cout << "\t\t=============================" << endl;
+    cout << "\t\t Floor and Ceiling Functions " << endl;
+    cout << "\t\t=============================" << endl;
 
-    cout << "\t\t======================" << endl;
-    cout << "\t\t Difference of Two Sets" << endl;
-    cout << "\t\t======================" << endl;
+    //Input for float number
+    float n;
+    cout << "Enter a float number: ";
+    cin >> n;
 
-    // Input for the first set
-    cout << "Enter the number of elements in Set A: ";
-    cin >> n1;
-    cout << "Enter the elements of Set A, separated by spaces: ";
-    for (int i = 0; i < n1; ++i) {
-        cin >> element;
-        set_A[i] = element;
-    }
+    //Calculate Floor Value
+    int floor_value = n;
+    if(n < 0 && n != floor_value)
+        floor_value -= 1;
 
-    // Input for the second set
-    cout << "Enter the number of elements in Set B: ";
-    cin >> n2;
-    cout << "Enter the elements of Set B, separated by spaces: ";
-    for (int i = 0; i < n2; ++i) {
-        cin >> element;
-        set_B[i] = element;
-    }
-
-    // Compute the difference between Set A and Set B
-    for (int i = 0; i < n1; ++i) {
-        int isDifferent = 1;  // Assume the element is different initially
-        for (int j = 0; j < n2; ++j) {
-            if (set_A[i] == set_B[j]) {
-                isDifferent = 0;  // Element found in Set B, not different
-                break;
-            }
-        }
-        if (isDifferent) {
-            differenceSet[differenceSize++] = set_A[i];
-        }
-    }
-
-    // Display the difference set
-    cout << "Difference of Set A - Set B: {";
-    int first = 1;
-    for (int i = 0; i < differenceSize; ++i) {
-        cout << (first ? "" : ",") << differenceSet[i];
-        first = 0;
-    }
-    cout << "}" << endl;
-
+    //Calculate Ceiling Value
+    int ceiling_value = n;
+    if(n > 0 && n != ceiling_value)
+        ceiling_value += 1;
+    
+    //Display the results
+    cout << "Input Number: " << n << endl;
+    cout << "Floor Value: " << floor_value << endl;
+    cout << "Ceiling Value: " << ceiling_value << endl;
     return 0;
 }
+
