@@ -3,7 +3,7 @@
 using namespace std;
 
 template<class A>
-A maxnum(A a,A b){
+A maxnum(A a){
     A result;
     result = (a>b)?a:b;
     return result;
