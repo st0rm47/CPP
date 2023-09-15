@@ -32,6 +32,14 @@ int main(){
     }
     cout << i << endl;
     }
+
+    //-->Continue
+   for(int n=0;n<6;n++){        
+        if(n%2==0){
+            continue;
+        }
+        cout << n<< endl;;
+    }
 }
 
 /*--->> Sum using Loops */
@@ -46,3 +54,4 @@ int main(){
 //     }
 //     cout << sum;
 // }
+
