@@ -84,7 +84,6 @@ int main(){
 }
 
 
-
 /*--> Copy Constructor */
 /* Aloows an object to be initialized with another object of same class*/
 #include<iostream>
@@ -105,3 +104,70 @@ int main (){
     // test t2=t1;
     test t2(t1);
 }
+
+/*--> Constructor Ovreloading*/
+#include<iostream>
+using namespace std;
+class rectangle {
+private:
+    int length;
+    int breadth;
+public:
+    rectangle() {
+        length = 0;
+        breadth = 0;
+    }
+    rectangle(int x, int y) {
+        length = x;
+        breadth = y;
+    }
+    rectangle(int z) {
+        length = breadth = z;
+    }
+    int area() {
+        return length * breadth;
+    }
+};
+int main() {
+    rectangle r;
+    cout << "Area of rectangle: " << r.area() << endl;
+    
+    int x, y;
+    cout << "Enter length and breadth: ";
+    cin >> x >> y;
+    rectangle r1(x, y);
+    cout << "Area of rectangle 1: " << r1.area() << endl;
+
+    int z;
+    cout << "Enter length for rectangle: ";
+    cin >> z;
+    rectangle r2(z);
+    cout << "Area of rectangle 2: " << r2.area() << endl;
+    return 0;
+}
+
+/*--> Destructor*/
+    /* Member function whose name is same as class
+    Preceeded by a tilde(~)
+    Doesn't return any value and doesn't takes arguments
+    To clean up the storage that is no longer required */
+
+#include<iostream>
+using namespace std;
+class Test
+{
+    public:
+    Test()//constructor
+    {
+    cout<<"\nControl is in constructor";
+    }
+    ~Test()//destructor
+    {
+    cout<<"\n Control is in destructor";
+    }
+};
+int main(){
+    Test t; //constructor is called
+    cout<<"Function main() terminating...";
+    //object t goes out of scope, destructor is called
+    }
