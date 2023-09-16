@@ -29,17 +29,17 @@ void bio :: data(){     // Member function outside a class
     cout << endl;
 }
 
-int main(){
-bio mydata[10]; //object using array
+// int main(){
+// bio mydata[10]; //object using array
 
-for(int i=0;i<2;i++){
-mydata[i].getdata();   //Function Call
-}
-for(int i=0;i<2;i++){
-mydata[i].data();      //Function Call
-}
-for(int i=0;i<2;i++){
-mydata[i].ssama();     //Function Call
-}
+// for(int i=0;i<2;i++){
+// mydata[i].getdata();   //Function Call
+// }
+// for(int i=0;i<2;i++){
+// mydata[i].data();      //Function Call
+// }
+// for(int i=0;i<2;i++){
+// mydata[i].ssama();     //Function Call
+// }
 
-}
+// }
