@@ -71,7 +71,7 @@ int main() {
 }
 
 
-// //Pass By value
+//Pass By value
 #include<iostream>
 using namespace std;
 void swap(int a,int b){
@@ -81,11 +81,11 @@ void swap(int a,int b){
     b=temp;
     }
 int main(){
-    int x=5,y=3;
-    swap(x,y);
+    int a=5,b=3;
+    swap(a,b);
     cout << "After Function Call" << endl;
-    cout << "x = " << x << endl;
-    cout << "y = " << y;
+    cout << "a = " << a << endl;
+    cout << "b = " << b;
 
     /*Values of x and y were passed but not variables x and y*/
 }
