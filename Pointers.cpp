@@ -1,17 +1,17 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int num = 42;
-    int *p = &num;
-    cout << p;
-    cout << *p;
-    /*Creates a pointer called p and assigns the address of variable num
-    Line 6 prints the address 
-    Line 7 prints the value stored in that address*/
+    // int num = 42;
+    // int *p = &num;
+    // cout << p << endl;
+    // cout << *p;
+    // /*Creates a pointer called p and assigns the address of variable num
+    // Line 6 prints the address 
+    // Line 7 prints the value stored in that address*/
 
-    string name = " Subodh";
-    string *ptr = & name;
-    //Pointer variable should have same data type as the variable its referring to
+    // string name = " Subodh";
+    // string *ptr = & name;
+    // //Pointer variable should have same data type as the variable its referring to
 
     int a = 4;
     int *p = &a;
