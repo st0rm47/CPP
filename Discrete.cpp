@@ -315,40 +315,40 @@ int main()
 }
 
 
-/*Combination*/
-#include <iostream>
-using namespace std;
+// /*Combination*/
+// #include <iostream>
+// using namespace std;
 
-// Function to calculate the factorial of a number
-int factorial(int num) 
-{
-    int result = 1;
-    for (int i = 1; i <= num; ++i) 
-        result *= i;
-    return result;
-}
-int main() 
-{
-    cout << "\t\t============================" << endl;
-    cout << "\t\t   Combination Calculator   " << endl;
-    cout << "\t\t============================" << endl;
+// // Function to calculate the factorial of a number
+// int factorial(int num) 
+// {
+//     int result = 1;
+//     for (int i = 1; i <= num; ++i) 
+//         result *= i;
+//     return result;
+// }
+// int main() 
+// {
+//     cout << "\t\t============================" << endl;
+//     cout << "\t\t   Combination Calculator   " << endl;
+//     cout << "\t\t============================" << endl;
 
-    // Input for value of n and r
-    int n, r;
-    cout << "Enter the value of n: ";
-    cin >> n;
-    cout << "Enter the value of r: ";
-    cin >> r;
+//     // Input for value of n and r
+//     int n, r;
+//     cout << "Enter the value of n: ";
+//     cin >> n;
+//     cout << "Enter the value of r: ";
+//     cin >> r;
 
-    // Check for valid inputs
-    if (n >= 0 && r >= 0 && n >= r) 
-    {
-        // Calculate the combination using the formula n! / (r! * (n - r)!)
-        int combination = factorial(n) / (factorial(r) * factorial(n - r));
+//     // Check for valid inputs
+//     if (n >= 0 && r >= 0 && n >= r) 
+//     {
+//         // Calculate the combination using the formula n! / (r! * (n - r)!)
+//         int combination = factorial(n) / (factorial(r) * factorial(n - r));
 
-        // Display the result
-        cout << "Combination of " << n << " items taken " << r << " at a time is: " 
-        << combination << endl;
-    }
-    return 0;
-}
+//         // Display the result
+//         cout << "Combination of " << n << " items taken " << r << " at a time is: " 
+//         << combination << endl;
+//     }
+//     return 0;
+// }
