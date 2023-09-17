@@ -194,37 +194,37 @@ int main()
     return 0;
 }
 
-// /*Floor Function and Ceiling Function*/
-// #include <iostream>
-// using namespace std;
+/*Floor Function and Ceiling Function*/
+#include <iostream>
+using namespace std;
 
-// int main() 
-// {
-//     cout << "\t\t=============================" << endl;
-//     cout << "\t\t Floor and Ceiling Functions " << endl;
-//     cout << "\t\t=============================" << endl;
+int main() 
+{
+    cout << "\t\t=============================" << endl;
+    cout << "\t\t Floor and Ceiling Functions " << endl;
+    cout << "\t\t=============================" << endl;
 
-//     //Input for float number
-//     float n;
-//     cout << "Enter a float number: ";
-//     cin >> n;
+    //Input for float number
+    float n;
+    cout << "Enter a float number: ";
+    cin >> n;
 
-//     //Calculate Floor Value
-//     int floor_value = n;
-//     if(n < 0 && n != floor_value)
-//         floor_value -= 1;
+    //Calculate Floor Value
+    int floor_value = n;
+    if(n < 0 && n != floor_value)
+        floor_value -= 1;
 
-//     //Calculate Ceiling Value
-//     int ceiling_value = n;
-//     if(n > 0 && n != ceiling_value)
-//         ceiling_value += 1;
+    //Calculate Ceiling Value
+    int ceiling_value = n;
+    if(n > 0 && n != ceiling_value)
+        ceiling_value += 1;
     
-//     //Display the results
-//     cout << "Input Number: " << n << endl;
-//     cout << "Floor Value: " << floor_value << endl;
-//     cout << "Ceiling Value: " << ceiling_value << endl;
-//     return 0;
-// }
+    //Display the results
+    cout << "Input Number: " << n << endl;
+    cout << "Floor Value: " << floor_value << endl;
+    cout << "Ceiling Value: " << ceiling_value << endl;
+    return 0;
+}
 
 
 // /*Cartesian Product*/
