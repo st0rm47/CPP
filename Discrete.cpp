@@ -277,42 +277,42 @@ int main()
     return 0;
 }
 
-// /*Permutation*/
-// #include <iostream>
-// using namespace std;
+/*Permutation*/
+#include <iostream>
+using namespace std;
 
-// // Function to calculate the factorial of a number
-// int factorial(int num) 
-// {
-//     int result = 1;
-//     for (int i = 1; i <= num; ++i) 
-//         result *= i;
-//     return result;
-// }
+// Function to calculate the factorial of a number
+int factorial(int num) 
+{
+    int result = 1;
+    for (int i = 1; i <= num; ++i) 
+        result *= i;
+    return result;
+}
 
-// int main() 
-// {
-//     cout << "\t\t============================" << endl;
-//     cout << "\t\t   Permutation Calculator   " << endl;
-//     cout << "\t\t============================" << endl;
+int main() 
+{
+    cout << "\t\t============================" << endl;
+    cout << "\t\t   Permutation Calculator   " << endl;
+    cout << "\t\t============================" << endl;
 
-//     int n, r;
-//     cout << "Enter the value of n: ";
-//     cin >> n;
-//     cout << "Enter the value of r: ";
-//     cin >> r;
+    int n, r;
+    cout << "Enter the value of n: ";
+    cin >> n;
+    cout << "Enter the value of r: ";
+    cin >> r;
 
-//     // Check for valid inputs
-//     if (n >= 0 && r >= 0 && n >= r) 
-//     {
-//         // Calculate the permutation using the formula n! / (n - r)!
-//         int permutation = factorial(n) / factorial(n - r);
+    // Check for valid inputs
+    if (n >= 0 && r >= 0 && n >= r) 
+    {
+        // Calculate the permutation using the formula n! / (n - r)!
+        int permutation = factorial(n) / factorial(n - r);
 
-//         // Display the result
-//         cout << "Permutation of " << n << " items taken " << r << " at a time is: " << permutation << endl;
-//     }
-//     return 0;
-// }
+        // Display the result
+        cout << "Permutation of " << n << " items taken " << r << " at a time is: " << permutation << endl;
+    }
+    return 0;
+}
 
 
 /*Combination*/
