@@ -227,55 +227,55 @@ int main()
 }
 
 
-/*Cartesian Product*/
-#include <iostream>
-using namespace std;
+// /*Cartesian Product*/
+// #include <iostream>
+// using namespace std;
 
-int main() 
-{
-    const int maxSize = 100;
-    int set_A[maxSize], set_B[maxSize];
-    int n1, n2, element_A, element_B;
+// int main() 
+// {
+//     const int maxSize = 100;
+//     int set_A[maxSize], set_B[maxSize];
+//     int n1, n2, element_A, element_B;
 
-    cout << "\t\t===============================" << endl;
-    cout << "\t\t   Cartesian Product of Sets   " << endl;
-    cout << "\t\t===============================" << endl;
+//     cout << "\t\t===============================" << endl;
+//     cout << "\t\t   Cartesian Product of Sets   " << endl;
+//     cout << "\t\t===============================" << endl;
 
-    // Input for the first set
-    cout << "Enter the number of elements in Set A: ";
-    cin >> n1;
-    cout << "Enter the elements of Set A, separated by spaces: ";
-    for (int i = 0; i < n1; ++i)
-    {
-        cin >> element_A;
-        set_A[i] = element_A;
-    }
+//     // Input for the first set
+//     cout << "Enter the number of elements in Set A: ";
+//     cin >> n1;
+//     cout << "Enter the elements of Set A, separated by spaces: ";
+//     for (int i = 0; i < n1; ++i)
+//     {
+//         cin >> element_A;
+//         set_A[i] = element_A;
+//     }
 
-    // Input for the second set
-    cout << "Enter the number of elements in Set B: ";
-    cin >> n2;
-    cout << "Enter the elements of Set B, separated by spaces: ";
-    for (int i = 0; i < n2; ++i)
-    {
-        cin >> element_B;
-        set_B[i] = element_B;
-    }
+//     // Input for the second set
+//     cout << "Enter the number of elements in Set B: ";
+//     cin >> n2;
+//     cout << "Enter the elements of Set B, separated by spaces: ";
+//     for (int i = 0; i < n2; ++i)
+//     {
+//         cin >> element_B;
+//         set_B[i] = element_B;
+//     }
 
-    // Display the Cartesian product
-    cout << "Cartesian Product of the two sets: {";
-    for (int i = 0; i < n1; ++i)
-    {
-        for (int j = 0; j < n2; ++j)
-        {
-            cout << "(" << set_A[i] << ", " << set_B[j] << ")";
-            if (i != n1 - 1 || j != n2 - 1)
-                cout << ", ";
-        }
-    }
-    cout << "}" << endl;
+//     // Display the Cartesian product
+//     cout << "Cartesian Product of the two sets: {";
+//     for (int i = 0; i < n1; ++i)
+//     {
+//         for (int j = 0; j < n2; ++j)
+//         {
+//             cout << "(" << set_A[i] << ", " << set_B[j] << ")";
+//             if (i != n1 - 1 || j != n2 - 1)
+//                 cout << ", ";
+//         }
+//     }
+//     cout << "}" << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
 // /*Permutation*/
 // #include <iostream>
