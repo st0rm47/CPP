@@ -4,22 +4,22 @@ using namespace std;
 class OuterClass {
 public:
     OuterClass() {
-        cout << "OuterClass constructor called" << std::endl;
+        cout << "OuterClass constructor called" << endl;
     }
 
     void OuterFunction() {
-        cout << "OuterFunction called" << std::endl;
+        cout << "OuterFunction called" << endl;
     }
 
     // Nested class definition
     class InnerClass {
     public:
         InnerClass() {
-            cout << "InnerClass constructor called" << std::endl;
+            cout << "InnerClass constructor called" << endl;
         }
 
         void InnerFunction() {
-            cout << "InnerFunction called" << std::endl;
+            cout << "InnerFunction called" << endl;
         }
     };
 };
