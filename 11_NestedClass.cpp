@@ -1,24 +1,25 @@
 /*--> Nested Class */
 #include <iostream>
+using namespace std;
 class OuterClass {
 public:
     OuterClass() {
-        std::cout << "OuterClass constructor called" << std::endl;
+        cout << "OuterClass constructor called" << std::endl;
     }
 
     void OuterFunction() {
-        std::cout << "OuterFunction called" << std::endl;
+        cout << "OuterFunction called" << std::endl;
     }
 
     // Nested class definition
     class InnerClass {
     public:
         InnerClass() {
-            std::cout << "InnerClass constructor called" << std::endl;
+            cout << "InnerClass constructor called" << std::endl;
         }
 
         void InnerFunction() {
-            std::cout << "InnerFunction called" << std::endl;
+            cout << "InnerFunction called" << std::endl;
         }
     };
 };
