@@ -42,3 +42,32 @@ int main(){
     auto z = 4;
     cout << x << " " << y << " " << z ;
 }
+
+
+/*Dynamic Memory Allocation*/
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size;
+    
+    cout << "Enter the size of the integer array: ";
+    cin >> size;
+
+    //Dynamically allocate memory
+    int* dynamicArray = new int[size];    
+    cout << "Enter " << size << " integers:" << endl;
+    for (int i = 0; i < size; i++) {
+        cin >> dynamicArray[i];
+    }    
+
+    // Display the values stored in the dynamically allocated array
+    cout << "You entered the following integers:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << dynamicArray[i] << " ";
+    }
+    cout << endl;
+    // Deallocate the dynamically allocated memory
+    delete[] dynamicArray;
+    return 0;
+}
