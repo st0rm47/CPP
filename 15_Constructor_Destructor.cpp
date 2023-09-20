@@ -171,3 +171,47 @@ int main(){
     cout<<"Function main() terminating...";
     //object t goes out of scope, destructor is called
     }
+
+
+
+/* Program Showing Constructor Overloading with default,parametrized and copy Constructor*/
+#include<iostream>
+using namespace std;
+class rectangle {
+private:
+    int length;
+    int breadth;
+public:
+    rectangle() {
+        length = 0;
+        breadth = 0;
+    }
+    rectangle(int x, int y) {
+        length = x;
+        breadth = y;
+    }
+    rectangle(rectangle &t) {
+        length =  t.length;
+        breadth = t.breadth;;
+    }
+    int area() {
+        return length * breadth;
+    }
+};
+int main() {
+    rectangle r;
+    cout << "Area of rectangle: " << r.area() << endl;
+    
+    int x, y;
+    cout << "Enter length and breadth: ";
+    cin >> x >> y;
+    rectangle r1(x, y);
+    cout << "Area of rectangle 1: " << r1.area() << endl;
+
+    int z;
+    cout << "Enter length for rectangle: ";
+    cin >> z;
+    rectangle r2(r1);
+    cout << "Area of rectangle 2: " << r2.area() << endl;
+    return 0;
+}
