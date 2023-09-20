@@ -192,7 +192,7 @@ public:
     }
     rectangle(rectangle &t) {
         length =  t.length;
-        breadth = t.breadth;;
+        breadth = t.breadth;
     }
     int area() {
         return length * breadth;
