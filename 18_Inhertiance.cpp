@@ -288,7 +288,7 @@ class C: public A, public B {
     }
 };
 int main() {
-	C obj;
-	obj.func();     //shows ambiguity */
+	C c;
+	c.func();     //shows ambiguity */
 	return 0;
 }
