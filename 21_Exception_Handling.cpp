@@ -1,10 +1,8 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
 int x = -1;
-
 // Some code
 cout << "Before try \n";
 try {
@@ -54,7 +52,8 @@ int main() {
         cout << arr[index] << endl;
     } catch (const char* msg) {
         cout << msg << endl;
-    } catch (int num) {
+    } catch (int num)
+     {
         cout << "Error: Cannot divide by " << num << endl;
     } catch (...) {
         cout << "Unexpected exception!" << endl;
