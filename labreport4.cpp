@@ -129,13 +129,14 @@ public:
     void showdata() {
         cout << "The sum is " << real << " + " << imaginary << "i" << endl;
     }
-    friend complex operator+(complex a, complex b) {
+    friend complex operator+(complex a, complex b);
+};
+complex operator+(complex a, complex b) {
         complex temp;
         temp.real = a.real + b.real;
         temp.imaginary = a.imaginary + b.imaginary;
         return temp;
     }
-};
 int main() {
     complex a, b, c;
     a.getdata();
