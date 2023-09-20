@@ -95,7 +95,35 @@ int main(){
 
 
 
-// /*3. Nameless Temporary Objects */
+/*3. Nameless Temporary Objects */
+#include <iostream>
+using namespace std;
+class Point {
+public:
+    int x, y;
+
+    Point(int x_, int y_) : x(x_), y(y_) {}
+
+    // Overload the + operator to create a new Point
+    Point operator+(const Point& other) const {
+        return Point(x + other.x, y + other.y);
+    }
+};
+
+int main() {
+    Point p1(2, 3);
+    Point p2(4, 5);
+
+    // Creating a nameless temporary object by adding p1 and p2
+    Point result = p1 + p2;
+
+    // Printing the result
+    cout << "Result: (" << result.x << ", " << result.y << ")\n";
+
+    // The nameless temporary object is automatically destroyed after this point
+
+    return 0;
+}
 
 
 
