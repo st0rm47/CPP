@@ -1,28 +1,28 @@
-// #include<iostream>
-// using namespace std;
-// class bio{  //class
-//     private:
-//     int age;
-//     string name;
-//     float salary;
-//     public:
-//         void getdata(){ // Member function inside a class
-//             cout << "Enter your name: ";
-//             cin >> name;
-//             cout << "Enter your age: ";
-//             cin >> age;
-//             cout << "Enter your salary: ";
-//             cin >> salary;
-//             cout << endl;
-//         }
+#include<iostream>
+using namespace std;
+class bio{  //class
+    private:
+    int age;
+    string name;
+    float salary;
+    public:
+        void getdata(){ // Member function inside a class
+            cout << "Enter your name: ";
+            cin >> name;
+            cout << "Enter your age: ";
+            cin >> age;
+            cout << "Enter your salary: ";
+            cin >> salary;
+            cout << endl;
+        }
     
-//     void data();    //Members of the class
-//     void ssama();   //Members of the class
-// };
-// void bio :: ssama(){    // Member function outside a class
-//     cout << "Salary = " << salary << endl;
+    void data();    //Members of the class
+    void ssama();   //Members of the class
+};
+void bio :: ssama(){    // Member function outside a class
+    cout << "Salary = " << salary << endl;
 
-// }
+}
 // void bio :: data(){     // Member function outside a class
 //     cout << "Name = " << name << endl;
 //     cout << "Age = " << age << endl;
