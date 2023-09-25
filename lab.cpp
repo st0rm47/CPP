@@ -45,6 +45,8 @@ mydata[i].ssama();     //Function Call
 }
 
 
+
+/* Switch Case */
 #include<iostream>
 using namespace std;
 int main(){
