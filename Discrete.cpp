@@ -519,36 +519,34 @@
 // }
 
 
-/*Euclidian GCD*/
-#include <iostream>
-using namespace std;
+// /*Euclidian GCD*/
+// #include <iostream>
+// using namespace std;
 
-// Function to calculate the GCD using the Euclidean algorithm
-int GCD(int a, int b) {
-    if (b == 0) {
-        return a;
-    }
-    return GCD(b, a % b);
-}
+// // Function to calculate the GCD using the Euclidean algorithm
+// int GCD(int a, int b) {
+//     if (b == 0) 
+//         return a;
+//     else
+//         return GCD(b, a % b);
+// }
 
-int main() {
-    cout << "\t\t============================" << endl;
-    cout << "\t\t   GCD Calculator (Euclidean)   " << endl;
-    cout << "\t\t============================" << endl;
+// int main() 
+// {
+//     cout << "\t\t================================" << endl;
+//     cout << "\t\t   GCD Calculator (Euclidean)   " << endl;
+//     cout << "\t\t================================" << endl;
 
-    int num1, num2;
+//     int num1, num2;
+//     cout << "Enter the first number: ";
+//     cin >> num1;
+//     cout << "Enter the second number: ";
+//     cin >> num2;
 
-    cout << "Enter the first number: ";
-    cin >> num1;
-    cout << "Enter the second number: ";
-    cin >> num2;
-
-    GCD(num1, num2);
-
-    cout << "The GCD of " << num1 << " and " << num2 << " is: " << GCD(num1, num2); << endl;
-
-    return 0;
-}
+//     // Calculate and display the GCD of num1 and num2 using the GCD function
+//     cout << "The GCD of " << num1 << " and " << num2 << " is: " << GCD(num1, num2) << endl;
+//     return 0;
+// }
 
 
 // /*Extended Euclidian*/
@@ -556,8 +554,10 @@ int main() {
 // using namespace std;
 
 // // Function to perform extended Euclidean algorithm
-// int extendedEuclidean(int a, int b, int &x, int &y) {
-//     if (b == 0) {
+// int extendedEuclidean(int a, int b, int &x, int &y) 
+// {
+//     if (b == 0) 
+//     {
 //         x = 1;
 //         y = 0;
 //         return a;
@@ -565,31 +565,97 @@ int main() {
 
 //     int x1, y1;
 //     int gcd = extendedEuclidean(b, a % b, x1, y1);
-
 //     x = y1;
 //     y = x1 - (a / b) * y1;
-
 //     return gcd;
 // }
-
-// int main() {
-//     cout << "\t\t============================" << endl;
-//     cout << "\t\t   Extended GCD Calculator   " << endl;
-//     cout << "\t\t============================" << endl;
+// int main() 
+// {
+//     cout << "\t\t=========================================" << endl;
+//     cout << "\t\t   GCD Calculator (Extended Euclidean)   " << endl;
+//     cout << "\t\t=========================================" << endl;
 
 //     int num1, num2;
 //     int x, y;
-
 //     cout << "Enter the first number: ";
 //     cin >> num1;
 //     cout << "Enter the second number: ";
 //     cin >> num2;
 
-//     int gcd = extendedEuclidean(num1, num2, x, y);
 
+//     // Display the GCD and Bezout coefficients
+//     int gcd = extendedEuclidean(num1, num2, x, y);
 //     cout << "GCD(" << num1 << ", " << num2 << ") = " << gcd << endl;
-//     cout << "Bézout coefficients (x, y): x = " << x << ", y = " << y << endl;
+//     cout << "Bezout coefficients (x, y): x = " << x << ", y = " << y << endl;
 
 //     return 0;
 // }
 
+/*Boolean Join*/
+#include <iostream>
+using namespace std;
+
+// Function to perform Boolean join (OR) of two matrices
+void booleanJoin(int A[100][100], int B[100][100], int result[100][100], int r, int c) 
+{
+    for (int i = 0; i < r; i++) 
+    {
+        for (int j = 0; j < c; j++) 
+        {
+            // Perform Boolean OR operation
+            result[i][j] = A[i][j] || B[i][j]; 
+        }
+    }
+}
+
+// Function to display a matrix
+void displayMatrix(int matrix[100][100], int r, int c) 
+{
+    for (int i = 0; i < r; i++) 
+    {
+        for (int j = 0; j < c; j++) 
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() 
+{
+    int A[100][100];
+    int B[100][100];
+    int result[100][100];
+    int rows, cols;
+
+    cout << "Enter the number of rows and columns: ";
+    cin >> rows >> cols;
+
+    cout << "Enter the elements of the first Boolean matrix (0 or 1):" << endl;
+    for (int i = 0; i < rows; i++) 
+    {
+        for (int j = 0; j < cols; j++) 
+        {
+            // Prompt the user for matrix A element
+            cout << "Enter matrix A [" << i << "]" << "[" << j << "]: ";
+            cin >> A[i][j];
+        }
+    }
+
+    cout << "Enter the elements of the second Boolean matrix (0 or 1):" << endl;
+    for (int i = 0; i < rows; i++) 
+    {
+        for (int j = 0; j < cols; j++) 
+        {
+            // Prompt the user for matrix B element
+            cout << "Enter matrix B [" << i << "]" << "[" << j << "]: ";
+            cin >> B[i][j];
+        }
+    }
+
+    // Calculate the Boolean join of the two matrices
+    booleanJoin(A, B, result, rows, cols);
+    cout << "Boolean Join of the two matrices:" << endl;
+    displayMatrix(result, rows, cols);
+   return 0;
+}

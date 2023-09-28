@@ -66,5 +66,6 @@
   },
   "githubPullRequests.ignoredPullRequestBranches": [
     "main"
-  ]
+  ],
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }
