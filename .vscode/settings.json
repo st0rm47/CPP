@@ -56,11 +56,13 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "files.associations": {
+    "*.embeddedhtml": "html",
     "iostream": "cpp",
     "ostream": "cpp",
     "array": "cpp",
     "string": "cpp",
-    "string_view": "cpp"
+    "string_view": "cpp",
+    "numeric": "cpp"
   },
   "githubPullRequests.ignoredPullRequestBranches": [
     "main"
