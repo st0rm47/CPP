@@ -16,15 +16,39 @@ int main(){
     y=maxnum(c,d);
 
     cout << "Largest among 2 integers : " << x << endl;
-    cout << "Largest among 2 float : " << y << endl;
+    cout << "Largest among 2 floating  : " << y << endl;
     return 0;
 }
+
 
 /*2.WAP to swap data using template function.*/
 #include<iostream>
 using namespace std;
-template<Class A>
-A swapdata
+template<class A>
+void swap(A *x,A *y){
+	A temp;
+	temp=*x;
+	*x=*y;
+	*y=temp;
+}
+int main(){
+	int a,b;
+	cout << "Enter two integer numbers: ";
+	cin >> a >> b;
+	cout << "Before Swapping: " << endl << "a = " << a << " and b = "<< b << endl;
+	swap(&a,&b);
+	cout << "After Swapping: " << endl << "a = " << a << " and b = " << b << endl;
+	
+    float c,d;
+    cout << "Enter two floating numbers: " ;
+	cin >> c >> d;
+	cout << "Before Swapping: " << endl << "c = " << c << " and d = "<< d << endl;
+	swap(&c,&d);
+	cout << "After Swapping: " << endl << "c = " << c << " and d = " << d << endl;
+	
+    return 0;
+}
+
 
 /*3.WAP to build simple calculator using class template.*/
 #include<iostream>
@@ -61,32 +85,72 @@ void Calculator <A> :: display(){
     cout << a << " / " << b << " = " << div() << endl;
 }
 int main(){
-    Calculator <int> c1(2,4);
-    Calculator <float> c2(3.5,4.5);
+    int a,b;
+    cout << "Enter two integer numbers: ";
+    cin >> a >> b;
 
-    cout << endl << "Caclulator for Integers: " << endl;
+    float c,d;
+    cout << "Enter two floating numbers: " ;
+    cin >> c >> d;
+
+    Calculator <int> c1(a,b);
+    Calculator <float> c2(c,d);
+
+    cout << endl << "Calculator for Integers: " << endl;
     c1.display();
 
-    cout << endl << "Caclulator for Float: " << endl;
+    cout << endl << "Calculator for Float: " << endl;
     c2.display();
 }
+
 
 /*4.WAP to find sum of numbers using function template overloading.*/
 #include<iostream>
 using namespace std;
-template<class A>
-void print(A a){
-    cout << a << endl;
-}
 template<class A, class B>
-void print(A a, B b){
-    cout << a << b << endl;
+void sum(A a,B b){
+    cout << a << " + " << b << " = " << a+b  << endl;
+}
+template<class A, class B, class C>
+void sum(A a,B b,C c){
+    cout << a << " + " << b << " + " << c << " = " << a+b+c << endl;
 }
 int main(){
-    int a=5;
-    print(a);
-    float b = 4.5;
-    print(a,b);
+    int a,b;
+	cout << "Enter two integer numbers: ";
+	cin >> a >> b ;
+    sum(a,b);
+
+    float c,d,e;
+	cout << "Enter three floating numbers: ";
+	cin >> c >> d >> e;
+    sum(c,d,e);
+
+    return 0;
 }
 
+
 /*5.WAP to find sum of array using function template.*/
+#include <iostream>
+using namespace std;
+template <class A>
+A arraySum(A a[],int n) {
+    A sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += a[i];
+    }
+    return sum;
+}
+
+int main() {
+    int intArray[] = {1, 2, 3, 4, 5};
+    double doubleArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+
+    int intSum = arraySum(intArray,5);
+    cout << "Sum of the integer array: " << intSum << endl;
+
+    double doubleSum = arraySum(doubleArray,5);
+    cout << "Sum of the double array: " << doubleSum << endl;
+
+    return 0;
+}
