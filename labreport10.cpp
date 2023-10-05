@@ -14,7 +14,6 @@ int main() {
         for (int i = 1; i <= 100; ++i) {
             file << i << "\n";
         }
-
         // Close the file
         file.close();
         cout << "Data written to Notes.txt successfully." << endl;
