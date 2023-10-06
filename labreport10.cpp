@@ -20,8 +20,8 @@ int main() {
     } else {
         cerr << "Unable to open Notes.txt for writing." << endl;
     }
-
     return 0;
+    
 }
 
 
