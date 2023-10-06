@@ -833,28 +833,57 @@
 // } 
 
 
-/*Disjunction*/
+// /*Disjunction*/
+// #include <iostream>
+// using namespace std;
+
+// int main() 
+// {
+//     // Header for the truth table
+//     cout << "\t\t====================================" << endl;
+//     cout << "\t\t  Truth Table for Disjunction (OR)  " << endl;
+//     cout << "\t\t====================================" << endl;
+//     cout << "A  |  B  |  A ir B" << endl;
+//     cout << "===================" << endl;
+
+//     // Nested loops to iterate through all possible combinations of A and B
+//     for (int A = 0; A <= 1; A++) 
+//         for (int B = 0; B <= 1; B++) 
+//         {
+//             // Calculate A OR B
+//             int result = A || B;
+
+//             // Display the current combination and the result
+//             cout << A << "  |  " << B << "  |  " << result << endl;
+//         }
+//     return 0;
+// } 
+
+
+/*Implication*/
 #include <iostream>
 using namespace std;
-
 int main() 
 {
     // Header for the truth table
-    cout << "\t\t====================================" << endl;
-    cout << "\t\t  Truth Table for Disjunction (OR)  " << endl;
-    cout << "\t\t====================================" << endl;
-    cout << "A  |  B  |  A or B" << endl;
+    cout << "\t\t======================================" << endl;
+    cout << "\t\t  Truth Table for Implication (A -> B)" << endl;
+    cout << "\t\t======================================" << endl;
+    cout << "A  |  B  |  A -> B" << endl;
     cout << "==================" << endl;
 
     // Nested loops to iterate through all possible combinations of A and B
     for (int A = 0; A <= 1; A++) 
+    {
         for (int B = 0; B <= 1; B++) 
         {
-            // Calculate A OR B
-            int result = A || B;
+            // Calculate A => B
+            int result = !A || B; // A implies B is true unless A is true and B is false
 
             // Display the current combination and the result
-            cout << A << "  |  " << B << "  |  " << result << "\n";
+            cout << A << "  |  " << B << "  |  " << result << endl;;
         }
+    }
+
     return 0;
-} 
+}
