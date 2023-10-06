@@ -860,30 +860,144 @@
 // } 
 
 
-/*Implication*/
-#include <iostream>
-using namespace std;
-int main() 
-{
-    // Header for the truth table
-    cout << "\t\t======================================" << endl;
-    cout << "\t\t  Truth Table for Implication (A -> B)" << endl;
-    cout << "\t\t======================================" << endl;
-    cout << "A  |  B  |  A -> B" << endl;
-    cout << "==================" << endl;
+// /*Implication*/
+// #include <iostream>
+// using namespace std;
+// int main() 
+// {
+//     // Header for the truth table
+//     cout << "\t\t======================================" << endl;
+//     cout << "\t\t  Truth Table for Implication (A -> B)" << endl;
+//     cout << "\t\t======================================" << endl;
+//     cout << "A  |  B  |  A -> B" << endl;
+//     cout << "==================" << endl;
 
-    // Nested loops to iterate through all possible combinations of A and B
-    for (int A = 0; A <= 1; A++) 
-    {
-        for (int B = 0; B <= 1; B++) 
-        {
-            // Calculate A => B
-            int result = !A || B; // A implies B is true unless A is true and B is false
+//     // Nested loops to iterate through all possible combinations of A and B
+//     for (int A = 0; A <= 1; A++) 
+//     {
+//         for (int B = 0; B <= 1; B++) 
+//         {
+//             // Calculate A => B
+//             int result = !A || B; // A implies B is true unless A is true and B is false
 
-            // Display the current combination and the result
-            cout << A << "  |  " << B << "  |  " << result << endl;;
-        }
-    }
+//             // Display the current combination and the result
+//             cout << A << "  |  " << B << "  |  " << result << endl;
+//         }
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
+
+
+// /*Valid Arguments*/
+// #include <iostream>
+// using namespace std;
+
+// int main() 
+// {   
+//     cout << "\t\t=========================" << endl;
+//     cout << "\t\t  Validity of Arguments  " << endl;
+//     cout << "\t\t=========================" << endl;
+//     cout << "A  |  B  |  A->B  |  Validity " << endl;
+//     cout << "==============================" << endl;
+
+//     // Loop through all possible truth values for A and B
+//     for (int A = 0; A <= 1; A++)
+//         for (int B = 0; B <= 1; B++) 
+//         {
+//             // Calculate the result of A implies B
+//             int result = (!A || B);
+
+//             // Determine if the argument is valid or invalid
+//             string validity = (result == 1) ? "Valid" : "Invalid";
+
+//             // Output the result in the table format
+//             cout << A << "  |  " << B << "  |     " << result << "  |  "  << validity << endl;
+//         }
+//     return 0;
+// }
+
+
+
+
+// /*Graph*/
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+//     int v, e; // n is the number of vertices, m is the number of edges
+//     cout << "\t\t******************\n";
+//     cout << "\t\t\tGraph\n";
+//     cout << "\t\t******************\n";
+
+//     cout << "Enter the number of vertices: ";
+//     cin >> v;
+//     cout << "Enter the number of edges: ";
+//     cin >> e;
+
+//     // Initialize an adjacency matrix to represent the graph
+//     int graph[v][v];
+
+//     // Initialize all elements of the adjacency matrix to 0 (no edges)
+//     for (int i = 0; i < v; i++) {
+//         for (int j = 0; j < v; j++) {
+//             graph[i][j] = 0;
+//         }
+//     }
+
+//     // Automatically assign vertex names starting from 'a'
+//     string vertexNames[v];
+//     char currentName = 'A';
+//     for (int i = 0; i < v; i++) {
+//         vertexNames[i] = string(1, currentName);
+//         currentName++;
+//     }
+
+//     cout << "Enter the edges in the format 'vertex1 vertex2':\n";
+//     // Input the edges and update the adjacency matrix
+//     for (int i = 0; i < e; i++) {
+//         string a, b;
+//         cin >> a >> b;
+
+//         int aIndex = -1;
+//         int bIndex = -1;
+
+//         // Find the indices corresponding to the vertex names
+//         for (int j = 0; j < e; j++) {
+//             if (vertexNames[j] == a) {
+//                 aIndex = j;
+//             }
+//             if (vertexNames[j] == b) {
+//                 bIndex = j;
+//             }
+//         }
+
+//         if (aIndex != -1 && bIndex != -1) {
+//             // Update the adjacency matrix to represent the edge (u, v)
+//             graph[aIndex][bIndex] = 1;
+//             graph[bIndex][aIndex] = 1; // Assuming the graph is undirected
+//         } else {
+//             cout << "Invalid vertex names.\n";
+//         }
+//     }
+
+//      // Print the adjacency matrix with vertex names
+//     cout << "\nAdjacency Matrix representing the Graph:\n";
+//     cout << "   ";
+//     for (int i = 0; i < v; i++) {
+//         cout << "  " << vertexNames[i] << "  ";
+//     }
+//     cout << endl;
+//     for (int i = 0; i < v; i++) {
+//         cout << vertexNames[i] << " ";
+//         for (int j = 0; j < v; j++) {
+//             cout << " | "  << graph[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
