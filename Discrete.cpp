@@ -922,12 +922,11 @@
 
 // /*Graph*/
 // #include <iostream>
-// #include <string>
 
 // using namespace std;
 
 // int main() {
-//     int v, e; // n is the number of vertices, m is the number of edges
+//     int v, e; // v is the number of vertices, e is the number of edges
 //     cout << "\t\t******************\n";
 //     cout << "\t\t\tGraph\n";
 //     cout << "\t\t******************\n";
@@ -947,57 +946,78 @@
 //         }
 //     }
 
-//     // Automatically assign vertex names starting from 'a'
-//     string vertexNames[v];
-//     char currentName = 'A';
-//     for (int i = 0; i < v; i++) {
-//         vertexNames[i] = string(1, currentName);
-//         currentName++;
-//     }
-
 //     cout << "Enter the edges in the format 'vertex1 vertex2':\n";
 //     // Input the edges and update the adjacency matrix
 //     for (int i = 0; i < e; i++) {
-//         string a, b;
-//         cin >> a >> b;
+//         int u, v;
+//         cin >> u >> v;
 
-//         int aIndex = -1;
-//         int bIndex = -1;
-
-//         // Find the indices corresponding to the vertex names
-//         for (int j = 0; j < e; j++) {
-//             if (vertexNames[j] == a) {
-//                 aIndex = j;
-//             }
-//             if (vertexNames[j] == b) {
-//                 bIndex = j;
-//             }
-//         }
-
-//         if (aIndex != -1 && bIndex != -1) {
+//         if (u >= 0 && u < v && v < v) {
 //             // Update the adjacency matrix to represent the edge (u, v)
-//             graph[aIndex][bIndex] = 1;
-//             graph[bIndex][aIndex] = 1; // Assuming the graph is undirected
+//             graph[u][v] = 1;
+//             graph[v][u] = 1; // Assuming the graph is undirected
 //         } else {
-//             cout << "Invalid vertex names.\n";
+//             cout << "Invalid vertices.\n";
 //         }
 //     }
 
-//      // Print the adjacency matrix with vertex names
+//     // Print the adjacency matrix
 //     cout << "\nAdjacency Matrix representing the Graph:\n";
-//     cout << "   ";
 //     for (int i = 0; i < v; i++) {
-//         cout << "  " << vertexNames[i] << "  ";
-//     }
-//     cout << endl;
-//     for (int i = 0; i < v; i++) {
-//         cout << vertexNames[i] << " ";
 //         for (int j = 0; j < v; j++) {
-//             cout << " | "  << graph[i][j] << " ";
+//             cout << graph[i][j] << " ";
 //         }
 //         cout << endl;
 //     }
+
 //     return 0;
 // }
 
 
+
+/*Equivalemce Relation*/
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of elements in the set: ";
+    cin >> n;
+
+    int relation[n][n];
+
+    cout << "Enter the relation as a matrix (" << n << "x" << n << "):\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> relation[i][j];
+        }
+    }
+
+    bool isEquivalence = true;
+
+    // Check for reflexivity, symmetry, and transitivity
+    for (int i = 0; i < n && isEquivalence; i++) {
+        if (relation[i][i] != 1) {
+            isEquivalence = false;
+        }
+        for (int j = 0; j < n && isEquivalence; j++) {
+            if (relation[i][j] != relation[j][i]) {
+                isEquivalence = false;
+            }
+            for (int k = 0; k < n && isEquivalence; k++) {
+                if (relation[i][j] == 1 && relation[j][k] == 1 && relation[i][k] != 1) {
+                    isEquivalence = false;
+                }
+            }
+        }
+    }
+
+    if (isEquivalence) {
+        cout << "\nThe given relation is an equivalence relation." << endl;
+    } else {
+        cout << "\nThe given relation is not an equivalence relation." << endl;
+    }
+
+    return 0;
+}
