@@ -681,12 +681,14 @@
 // // Function to display a matrix
 // void displayMatrix(int matrix[100][100], int r, int c) 
 // {
-//     for (int i = 0; i < r; i++) 
+//     for (int i = 0; i < r; i++)
+//     { 
 //         for (int j = 0; j < c; j++) 
 //         {
 //             cout << matrix[i][j] << " ";
 //         }
 //         cout << endl;
+// }
 // }
 
 // int main() 
@@ -807,30 +809,30 @@
 
 
 // /*Conjuction Table*/
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main() 
-{
-    cout << "\t\t=====================================" << endl;
-    cout << "\t\t  Truth Table for Conjunction (AND)  " << endl;
-    cout << "\t\t=====================================" << endl;
+// int main() 
+// {
+//     cout << "\t\t=====================================" << endl;
+//     cout << "\t\t  Truth Table for Conjunction (AND)  " << endl;
+//     cout << "\t\t=====================================" << endl;
     
-    cout << "A  |  B  |  A and B" << endl;
-    cout << "===================" << endl;
+//     cout << "A  |  B  |  A and B" << endl;
+//     cout << "===================" << endl;
 
-    // Nested loops to iterate through all possible combinations of A and B
-    for (int A = 0; A <= 1; A++) 
-        for (int B = 0; B <= 1; B++) 
-        {
-            // Calculate A AND B
-            int result = A && B;
+//     // Nested loops to iterate through all possible combinations of A and B
+//     for (int A = 0; A <= 1; A++) 
+//         for (int B = 0; B <= 1; B++) 
+//         {
+//             // Calculate A AND B
+//             int result = A && B;
 
-            // Display the current combination and the result
-            cout << A << "  |  " << B << "  |  " << result << "\n";
-        }
-    return 0;
-} 
+//             // Display the current combination and the result
+//             cout << A << "  |  " << B << "  |  " << result << "\n";
+//         }
+//     return 0;
+// } 
 
 
 // /*Disjunction*/
@@ -934,11 +936,10 @@ int main()
 //     cin >> v;
 //     cout << "Enter the number of edges: ";
 //     cin >> e;
-
-//     // Initialize an adjacency matrix to represent the graph
+  
 //     int graph[v][v];
 
-//     // Initialize all elements of the adjacency matrix to 0 (no edges)
+//      // Initialize all elements of the adjacency matrix to 0 (no edges)
 //     for (int i = 0; i < v; i++)
 //         for (int j = 0; j < v; j++) 
 //         {
@@ -946,82 +947,80 @@ int main()
 //         }
 
 //     // Input the edges and update the adjacency matrix
-//     cout << "Enter the edges in the format 'vertex1 vertex2':\n";
+//     cout << "Enter the edges in the format 'vertex1 vertex2': " << endl;
 //     for (int i = 0; i < e; i++) 
 //     {
 //         int u, v;
 //         cin >> u >> v;
-//         if (u >= 0 && u < v && v < v) 
-//         {
 //             // Update the adjacency matrix to represent the edge (u, v)
 //             graph[u][v] = 1;
 //             graph[v][u] = 1; // Assuming the graph is undirected
-//         } 
-//         else 
-//             cout << "Invalid vertices.\n";
 //     }
 
+
 //     // Print the adjacency matrix
-//     cout << "\nAdjacency Matrix representing the Graph:\n";
-//     for (int i = 0; i < v; i++)
+//     cout << "Adjacency Matrix representing the Graph: " << endl;
+//     for (int i = 0; i < v; i++){
 //         for (int j = 0; j < v; j++) 
 //         {
 //             cout << graph[i][j] << " ";
 //         }
 //         cout << endl;
+//     }
 //     return 0;
 // }
 
 
 
-// /*Equivalemce Relation*/
-// #include <iostream>
-// using namespace std;
 
-// int main() 
-// {
-    // cout << "\t\t========================" << endl;
-    // cout << "\t\t  Equivelence Relation  " << endl;
-    // cout << "\t\t========================" << endl;
+/*Equivalemce Relation*/
+#include <iostream>
+using namespace std;
 
-//     int n;
-//     cout << "Enter the number of elements in the set: ";
-//     cin >> n;
+int main() 
+{
+    cout << "\t\t========================" << endl;
+    cout << "\t\t  Equivelence Relation  " << endl;
+    cout << "\t\t========================" << endl;
 
-//     int relation[n][n];
-//     cout << "Enter the relation as a matrix (" << n << "x" << n << "):" << endl;
-//     for (int i = 0; i < n; i++)
-//     {
-//         for (int j = 0; j < n; j++)
-//         { 
-//             cin >> relation[i][j];
-//         }
-//     }
+    int n;
+    cout << "Enter the number of elements in the set: ";
+    cin >> n;
 
-//     bool isEquivalence = true;
+    int relation[n][n];
+    cout << "Enter the relation as a matrix (" << n << "x" << n << "):" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        { 
+            cin >> relation[i][j];
+        }
+    }
 
-//     // Check for reflexivity, symmetry, and transitivity
-//     for (int i = 0; i < n && isEquivalence; i++) 
-//     {
-//         if (relation[i][i] != 1)
-//             isEquivalence = false;
+    bool isEquivalence = true;
+
+    // Check for reflexivity, symmetry, and transitivity
+    for (int i = 0; i < n && isEquivalence; i++) 
+    {
+        if (relation[i][i] != 1)
+            isEquivalence = false;
         
-//         for (int j = 0; j < n && isEquivalence; j++) 
-//         {
-//             if (relation[i][j] != relation[j][i])
-//                 isEquivalence = false;
+        for (int j = 0; j < n && isEquivalence; j++) 
+        {
+            if (relation[i][j] != relation[j][i])
+                isEquivalence = false;
 
-//             for (int k = 0; k < n && isEquivalence; k++) 
-//             {
-//                 if (relation[i][j] == 1 && relation[j][k] == 1 && relation[i][k] != 1)
-//                     isEquivalence = false;
-//             }
-//         }
-//     }
+            for (int k = 0; k < n && isEquivalence; k++) 
+            {
+                if (relation[i][j] == 1 && relation[j][k] == 1 && relation[i][k] != 1)
+                    isEquivalence = false;
+            }
+        }
+    }
 
-//     if (isEquivalence)
-//         cout << "The given relation is an equivalence relation." << endl;
-//     else
-//         cout << "The given relation is not an equivalence relation." << endl;
-//     return 0;
-// }
+    if (isEquivalence)
+        cout << "The given relation is an equivalence relation." << endl;
+    else
+        cout << "The given relation is not an equivalence relation." << endl;
+    return 0;
+}
