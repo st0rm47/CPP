@@ -9,7 +9,7 @@ int main()
     int n1, n2, element;
     int unionSize = 0;
 
-    cout << "\t\t========================" << 2endl;
+    cout << "\t\t========================" << endl;
     cout << "\t\t   Union of Two Sets    " << endl;
     cout << "\t\t========================" << endl;
 
