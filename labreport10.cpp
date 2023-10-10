@@ -1,7 +1,6 @@
 /*1. WAP to write 1 to 100 in a data file Notes.txt*/
 #include <iostream>
 #include <fstream>
-
 using namespace std;
 
 int main() {
@@ -13,15 +12,14 @@ int main() {
         for (int i = 1; i <= 100; ++i) {
             file << i << "\n";
         }
-
         // Close the file
         file.close();
         cout << "Data written to Notes.txt successfully." << endl;
     } else {
         cerr << "Unable to open Notes.txt for writing." << endl;
     }
-
     return 0;
+    
 }
 
 

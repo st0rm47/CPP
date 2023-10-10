@@ -129,6 +129,7 @@ int main()
 }
 
 
+
 /*Difference Set*/
 #include <iostream>
 using namespace std;
@@ -227,6 +228,7 @@ int main()
 }
 
 
+
 /*Cartesian Product*/
 #include <iostream>
 using namespace std;
@@ -277,6 +279,8 @@ int main()
     return 0;
 }
 
+
+
 /*Permutation*/
 #include <iostream>
 using namespace std;
@@ -313,6 +317,7 @@ int main()
     }
     return 0;
 }
+
 
 
 /*Combination*/
@@ -352,6 +357,7 @@ int main()
     }
     return 0;
 }
+
 
 
 /*Factorial using recursion*/
@@ -420,6 +426,7 @@ int main()
         cout << "The " << n << "th Fibonacci term is: " << fibonacci(n) << endl;
     return 0;
 }
+
 
 
 /*Tower of Hanoi*/
@@ -519,6 +526,7 @@ int main()
 }
 
 
+
 /*Euclidian GCD*/
 #include <iostream>
 using namespace std;
@@ -546,6 +554,7 @@ int main()
     cout << "The GCD of " << num1 << " and " << num2 << " is: " << GCD(num1, num2) << endl;
     return 0;
 }
+
 
 
 /*Extended Euclidian*/
@@ -589,7 +598,6 @@ int main()
 
     return 0;
 }
-
 
 
 
@@ -660,4 +668,370 @@ int main()
     cout << "Boolean Join of the two matrices:" << endl;
     displayMatrix(result, rows, cols);
    return 0;
+}
+
+
+
+/*Boolean Meet*/
+#include <iostream>
+using namespace std;
+
+// Function to perform Boolean meet (AND) of two matrices
+void booleanMeet(int A[100][100], int B[100][100], int result[100][100], int r, int c) 
+{
+    for (int i = 0; i < r; i++) 
+        for (int j = 0; j < c; j++) 
+        {
+            // Perform Boolean AND operation
+            result[i][j] = A[i][j] && B[i][j]; 
+        }
+}
+
+// Function to display a matrix
+void displayMatrix(int matrix[100][100], int r, int c) 
+{
+    for (int i = 0; i < r; i++)
+    { 
+        for (int j = 0; j < c; j++) 
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+}
+}
+
+int main() 
+{
+    cout << "\t\t=========================================" << endl;
+    cout << "\t\t   Boolean Matrix Meet (AND) Calculator  " << endl;
+    cout << "\t\t=========================================" << endl;
+
+    int A[100][100];
+    int B[100][100];
+    int result[100][100];
+    int rows, cols;
+    cout << "Enter the number of rows and columns: ";
+    cin >> rows >> cols;
+
+    cout << "Enter the elements of the first Boolean matrix (0 or 1):" << endl;
+    for (int i = 0; i < rows; i++) 
+        for (int j = 0; j < cols; j++) 
+        {
+            // Prompt the user for matrix A element
+            cout << "Enter matrix A [" << i << "]" << "[" << j << "]: ";
+            cin >> A[i][j];
+        }
+
+    cout << "Enter the elements of the second Boolean matrix (0 or 1):" << endl;
+    for (int i = 0; i < rows; i++) 
+        for (int j = 0; j < cols; j++) 
+        {
+            // Prompt the user for matrix B element
+            cout << "Enter matrix B [" << i << "]" << "[" << j << "]: ";
+            cin >> B[i][j];
+        }
+
+    // Calculate the Boolean meet of the two matrices
+    booleanMeet(A, B, result, rows, cols);
+    cout << "Boolean Meet of the two matrices:" << endl;
+    displayMatrix(result, rows, cols);
+    return 0;
+}
+
+
+
+/*Boolean Product*/
+#include <iostream>
+using namespace std;
+
+// Function to calculate the product of two boolean matrices
+void booleanProduct(int A[100][100], int B[100][100], int result[100][100], int r1, int c1, int r2, int c2) 
+{
+    if (c1 != r2) 
+    {
+        cout << "Matrix multiplication is not possible. Column count of the first matrix should be equal to the row count of the second matrix." << endl;
+        return;
+    }
+    for (int i = 0; i < r1; i++)
+        for (int j = 0; j < c2; j++) 
+        {
+            result[i][j] = false;
+            for (int k = 0; k < c1; k++) 
+                result[i][j] = result[i][j] || (A[i][k] && B[k][j]);
+        }
+}
+
+// Function to display a matrix
+void displayMatrix(int matrix[100][100], int r, int c) 
+{
+    for (int i = 0; i < r; i++) 
+    {    for (int j = 0; j < c; j++) 
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() 
+{
+    cout << "\t\t=======================================" << endl;
+    cout << "\t\t   Boolean Matrix Product Calculator   " << endl;
+    cout << "\t\t=======================================" << endl;
+
+    int A[100][100];
+    int B[100][100];
+    int result[100][100];
+    int rows1, cols1, rows2, cols2;
+
+    cout << "Enter the number of rows and columns for the first matrix: ";
+    cin >> rows1 >> cols1;
+    cout << "Enter the elements of the first Boolean matrix (0 or 1):" << endl;
+    for (int i = 0; i < rows1; i++) 
+        for (int j = 0; j < cols1; j++) 
+        {
+            // Prompt the user for matrix A element
+            cout << "Enter matrix A [" << i << "]" << "[" << j << "]: ";
+            cin >> A[i][j];
+        }
+
+    cout << "Enter the number of rows and columns for the second matrix: ";
+    cin >> rows2 >> cols2;
+    cout << "Enter the elements of the second Boolean matrix (0 or 1):" << endl;
+    for (int i = 0; i < rows2; i++) 
+        for (int j = 0; j < cols2; j++) 
+        {
+            // Prompt the user for matrix B element
+            cout << "Enter matrix B [" << i << "]" << "[" << j << "]: ";
+            cin >> B[i][j];
+        }
+
+    // Calculate the product of the two matrices
+    if (cols1 == rows2) 
+    {
+        booleanProduct(A, B, result, rows1, cols1, rows2, cols2);
+        cout << "Boolean Product of the two matrices:" << endl;
+        displayMatrix(result, rows1, cols2);
+    }
+    return 0;
+}
+
+
+
+/*Conjuction Table*/
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    cout << "\t\t=====================================" << endl;
+    cout << "\t\t  Truth Table for Conjunction (AND)  " << endl;
+    cout << "\t\t=====================================" << endl;
+    
+    cout << "A  |  B  |  A and B" << endl;
+    cout << "===================" << endl;
+
+    // Nested loops to iterate through all possible combinations of A and B
+    for (int A = 0; A <= 1; A++) 
+        for (int B = 0; B <= 1; B++) 
+        {
+            // Calculate A AND B
+            int result = A && B;
+
+            // Display the current combination and the result
+            cout << A << "  |  " << B << "  |  " << result << "\n";
+        }
+    return 0;
+} 
+
+
+
+ /*Disjunction*/
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    // Header for the truth table
+    cout << "\t\t====================================" << endl;
+    cout << "\t\t  Truth Table for Disjunction (OR)  " << endl;
+    cout << "\t\t====================================" << endl;
+
+    cout << "A  |  B  |  A or B" << endl;
+    cout << "===================" << endl;
+
+    // Nested loops to iterate through all possible combinations of A and B
+    for (int A = 0; A <= 1; A++) 
+        for (int B = 0; B <= 1; B++) 
+        {
+            // Calculate A OR B
+            int result = A || B;
+
+            // Display the current combination and the result
+            cout << A << "  |  " << B << "  |  " << result << endl;
+        }
+    return 0;
+} 
+
+
+
+/*Implication*/
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    // Header for the truth table
+    cout << "\t\t======================================" << endl;
+    cout << "\t\t Truth Table for Implication (A -> B) " << endl;
+    cout << "\t\t======================================" << endl;
+    cout << "A  |  B  |  A -> B" << endl;
+    cout << "==================" << endl;
+
+    // Nested loops to iterate through all possible combinations of A and B
+    for (int A = 0; A <= 1; A++)
+        for (int B = 0; B <= 1; B++) 
+        {
+            // Calculate A => B
+            int result = !A || B; // A implies B is true unless A is true and B is false
+
+            // Display the current combination and the result
+            cout << A << "  |  " << B << "  |  " << result << endl;
+        }
+    return 0;
+}
+
+
+
+/*Valid Arguments*/
+#include <iostream>
+using namespace std;
+
+int main() 
+{   
+    cout << "\t\t=========================" << endl;
+    cout << "\t\t  Validity of Arguments  " << endl;
+    cout << "\t\t=========================" << endl;
+    cout << "A  |  B  |  A->B  |  Validity " << endl;
+    cout << "==============================" << endl;
+
+    // Loop through all possible truth values for A and B
+    for (int A = 0; A <= 1; A++)
+        for (int B = 0; B <= 1; B++) 
+        {
+            // Calculate the result of A implies B
+            int result = (!A || B);
+
+            // Determine if the argument is valid or invalid
+            string validity = (result == 1) ? "Valid" : "Invalid";
+
+            // Output the result in the table format
+            cout << A << "  |  " << B << "  |     " << result << "  |  "  << validity << endl;
+        }
+    return 0;
+}
+
+
+
+/*Graph*/
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    cout << "\t\t=======" << endl;
+    cout << "\t\t Graph " << endl;
+    cout << "\t\t=======" << endl;
+
+    int v, e; 
+    cout << "Enter the number of vertices: ";
+    cin >> v;
+    cout << "Enter the number of edges: ";
+    cin >> e;
+  
+    int graph[v][v];
+
+     // Initialize all elements of the adjacency matrix to 0 (no edges)
+    for (int i = 0; i < v; i++)
+        for (int j = 0; j < v; j++) 
+        {
+            graph[i][j] = 0;
+        }
+
+    // Input the edges and update the adjacency matrix
+    cout << "Enter the edges in the format 'vertex1 vertex2': " << endl;
+    for (int i = 0; i < e; i++) 
+    {
+        int u, v;
+        cin >> u >> v;
+            // Update the adjacency matrix to represent the edge (u, v)
+            graph[u][v] = 1;
+            graph[v][u] = 1; // Assuming the graph is undirected
+    }
+
+
+    // Print the adjacency matrix
+    cout << "Adjacency Matrix representing the Graph: " << endl;
+    for (int i = 0; i < v; i++){
+        for (int j = 0; j < v; j++) 
+        {
+            cout << graph[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
+
+
+/*Equivalemce Relation*/
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    cout << "\t\t========================" << endl;
+    cout << "\t\t  Equivelence Relation  " << endl;
+    cout << "\t\t========================" << endl;
+
+    int n;
+    cout << "Enter the number of elements in the set: ";
+    cin >> n;
+
+    int relation[n][n];
+    cout << "Enter the relation as a matrix (" << n << "x" << n << "):" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        { 
+            cin >> relation[i][j];
+        }
+    }
+
+    bool isEquivalence = true;
+
+    // Check for reflexivity, symmetry, and transitivity
+    for (int i = 0; i < n && isEquivalence; i++) 
+    {
+        if (relation[i][i] != 1)
+            isEquivalence = false;
+        
+        for (int j = 0; j < n && isEquivalence; j++) 
+        {
+            if (relation[i][j] != relation[j][i])
+                isEquivalence = false;
+
+            for (int k = 0; k < n && isEquivalence; k++) 
+            {
+                if (relation[i][j] == 1 && relation[j][k] == 1 && relation[i][k] != 1)
+                    isEquivalence = false;
+            }
+        }
+    }
+
+    if (isEquivalence)
+        cout << "The given relation is an equivalence relation." << endl;
+    else
+        cout << "The given relation is not an equivalence relation." << endl;
+    return 0;
 }
