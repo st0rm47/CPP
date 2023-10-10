@@ -30,7 +30,7 @@
 //     return 0;
 // }
 
-/*3. WAP to read content from a text file OUT.TXT and count the number of alphabets present in it.*/
+// /*3. WAP to read content from a text file OUT.TXT and count the number of alphabets present in it.*/
 // #include<iostream>
 // #include<fstream>
 // using namespace std;
@@ -51,7 +51,7 @@
 //     return 0;
 // }
 
-/*4. WAP to write and read values using variables in/from a file. */
+// /*4. WAP to write and read values using variables in/from a file. */
 // #include<iostream>
 // #include<fstream>
 // using namespace std;
@@ -64,7 +64,6 @@
 //     cout << "Enter a name: ";
 //     cin >> name;
 //     file << name << endl;
-
 //     cout << "Enter roll number: ";
 //     cin >> roll;
 //     file << roll << endl;
@@ -73,53 +72,95 @@
 //     file.open("Data.txt",ios::in);
 //     file >> name;
 //     file >> roll;
-
+//     cout << endl;
 //     cout << "Name: " << name << endl;
 //     cout << "Roll Number: " << roll << endl;
 //     file.close();
 //     return 0;
 // }
 
-/*5. WAP to find the sum of two complex numbers by overloading << and >> stream operators*/
+
+// /*5. WAP to find the sum of two complex numbers by overloading << and >> stream operators*/
+// #include <iostream>
+// #include <fstream>
+// using namespace std;
+// class complex {
+// public:
+//     int a,b;
+//     complex(){
+//         a = 0;
+//         b = 0;
+//     }
+//     complex operator+( complex& x) {
+//         complex temp;
+//         temp.a = a + x.a;
+//         temp.b = b + x.b;
+//         return temp;
+//     }
+//     friend istream & operator >> (istream & in, complex & c);
+//     friend ostream & operator << (ostream & out, complex & c);
+// };
+// istream & operator >> (istream & in, complex & c){
+//     cout << "Real part: ";
+//     cin >> c.a;
+//     cout << "Imaginary part: ";
+//     cin >> c.b;
+//     return in;
+// }
+// ostream & operator << (ostream & out, complex & c){
+//     cout << c.a << " + " << c.b << "i" << endl;
+//     return out;
+// }
+// int main(){
+//     complex c1,c2,sum;
+//     cout << "Enter first complex number: " << endl;
+//     cin >> c1;
+
+//     cout << "Enter second complex number: " << endl;
+//     cin >> c2;
+
+//     sum = c1 + c2;
+//     cout << "The sum of two complex number is: " << sum << endl;
+//     return 0;
+// }
+
+/*6. WAP demonstrating example of tellg(), tellp(), seekg(), seekp().*/
 #include <iostream>
 #include <fstream>
 using namespace std;
-class complex {
-public:
-    int a,b;
-    complex(){
-        a = 0;
-        b = 0;
-    }
-    complex operator+( complex& x) {
-        complex temp;
-        temp.a = a + x.a;
-        temp.b = b + x.b;
-        return temp;
-    }
-    friend istream & operator >> (istream & in, complex & c);
-    friend ostream & operator << (ostream & out, complex & c);
-};
-istream & operator >> (istream & in, complex & c){
-    cout << "Real part: ";
-    cin >> c.a;
-    cout << "Imaginary part: ";
-    cin >> c.b;
-    return in;
-}
-ostream & operator << (ostream & out, complex & c){
-    cout << c.a << " + " << c.b << "i" << endl;
-    return out;
-}
-int main(){
-    complex c1,c2,sum;
-    cout << "Enter first complex number: " << endl;
-    cin >> c1;
 
-    cout << "Enter second complex number: " << endl;
-    cin >> c2;
+int main() {
+    fstream file("file.txt", ios::in | ios::out | ios::trunc);
 
-    sum = c1 + c2;
-    cout << "The sum of two complex number is:" << endl << sum << endl;
+    // Write data to the file
+    file << "Welcome to Nepal" << endl;
+    file << "We warmly welcome you here" << endl;
+
+    // Get and display the current positions of the input and output file pointers
+    cout << "Initial positions:" << endl;
+    cout << "Input Position: " << file.tellg() << endl;
+    cout << "Output Position: " << file.tellp() << endl;
+
+    // Seek to the beginning of the file
+    file.seekg(0, ios::beg);
+    file.seekp(5, ios::beg);
+
+    // Read from the current input position
+    string line;
+    getline(file, line);
+    cout << "Read from input position: " << line << endl;
+
+    // Seek to the end of the file
+    file.seekp(0, ios::end);
+
+    // Write more data to the end of the file
+    file << "Appending data at the end." << endl;
+
+    // Get and display the updated positions of the input and output file pointers
+    cout << "Updated positions:" << endl;
+    cout << "Input Position: " << file.tellg() << endl;
+    cout << "Output Position: " << file.tellp() << endl;
+    file.close();
     return 0;
 }
+
