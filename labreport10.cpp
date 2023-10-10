@@ -1,5 +1,4 @@
 /*1. WAP to write 1 to 100 in a data file Notes.txt*/
-
 #include <iostream>
 #include <fstream>
 
