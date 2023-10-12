@@ -1,4 +1,4 @@
-/*WAP to create a binary file and write data into it.*/
+/*1. WAP to create a binary file and write data into it.*/
 #include<iostream>
 #include<fstream>
 using namespace std;
@@ -19,24 +19,24 @@ int main(){
     return 0;
 }
 
-// /*WAP to read the contents from the binary file made recently.*/
-// #include<iostream>
-// #include<fstream>
-// using namespace std;
-// class test{
-//     int x,y;
-// public:
-//     void showdata(){
-//         cout << "The values of x and y: " << endl;
-//         cout << x << endl << y;
-//     }
-// };
-// int main(){
-//     test t;
-//     ifstream a;
-//     a.open("Data.bin");
-//     a.read((char *)&t,sizeof(t));
-//     a.close();
-//     t.showdata();
-//     return 0;
-// }
+/*2.WAP to read the contents from the binary file made recently.*/
+#include<iostream>
+#include<fstream>
+using namespace std;
+class test{
+    int x,y;
+public:
+    void showdata(){
+        cout << "The values of x and y: " << endl;
+        cout << x << endl << y;
+    }
+};
+int main(){
+    test t;
+    ifstream a;
+    a.open("Data.bin");
+    a.read((char *)&t,sizeof(t));
+    a.close();
+    t.showdata();
+    return 0;
+}
