@@ -82,4 +82,5 @@ int main() {
             max = nums[i];
     }
     cout << max;
+    delete [] nums; // Deletes the allocated memory
 }
