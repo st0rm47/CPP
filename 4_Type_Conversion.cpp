@@ -15,10 +15,10 @@ int main(){
     cout << y << endl;
 
     //Explicit Type Conversion
-    // float x=3.45;
-    // int y;
-    // y=int(x);
-    // cout << y;
+    float x=3.45;
+    int y;
+    y=int(x);
+    cout << y;
 
     //Dynamic Memory Allocation
     // int *a=new int(20);
