@@ -935,6 +935,7 @@ int main()
 
 
 
+
 /*Graph*/
 #include <iostream>
 using namespace std;
@@ -997,15 +998,15 @@ int main()
     cout << "\t\t========================" << endl;
 
     int n;
-    cout << "Enter the number of elements in the set: ";
+    cout << "Enter the number of pairs in the relation: ";
     cin >> n;
 
-    int relation[n][n];
-    cout << "Enter the relation as a matrix (" << n << "x" << n << "):" << endl;
+    int relation[n][2];
+    cout << "Enter the pairs: " << endl;
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
-        { 
+        for (int j = 0; j < 2; j++)
+        {
             cin >> relation[i][j];
         }
     }
@@ -1015,17 +1016,19 @@ int main()
     // Check for reflexivity, symmetry, and transitivity
     for (int i = 0; i < n && isEquivalence; i++) 
     {
-        if (relation[i][i] != 1)
+        if (relation[i][0] != relation[i][1])
             isEquivalence = false;
         
         for (int j = 0; j < n && isEquivalence; j++) 
         {
-            if (relation[i][j] != relation[j][i])
+            if (relation[i][0] == relation[j][1] && relation[i][1] == relation[j][0])
+                break;
+            if (j == n - 1)
                 isEquivalence = false;
 
             for (int k = 0; k < n && isEquivalence; k++) 
             {
-                if (relation[i][j] == 1 && relation[j][k] == 1 && relation[i][k] != 1)
+                if (relation[i][1] == relation[j][0] && relation[j][1] == relation[k][0] && relation[i][0] != relation[k][1])
                     isEquivalence = false;
             }
         }
@@ -1037,3 +1040,5 @@ int main()
         cout << "The given relation is not an equivalence relation." << endl;
     return 0;
 }
+
+
