@@ -18,13 +18,13 @@ int main(){
     char str[30];
     ifstream file;
     file.open("file.txt");
-    // while(!file.eof()){                     // reads until the end of file
-        // file >> str;                      // Reads from a file
+    while(!file.eof()){                     // reads until the end of file
+        file >> str;                      // Reads from a file
         
-        file.getline(str,20);               // Reads only 20 characters
+        // file.getline(str,20);               // Reads only 20 characters
         
         cout << str;
-    //}
+    }
     file.close();                        // Closing a file
     return 0;
 }
@@ -44,7 +44,7 @@ int main() {
     return 0;
 }
 
-/*Program to read and write content in a single file*/
+// /*Program to read and write content in a single file*/
 #include<iostream>
 #include<fstream>
 using namespace std;
@@ -61,6 +61,7 @@ int main(){
     file.open("abc.txt", ios::in);    // Opened file for reading
     cout << "Name";
     file >> name;                     // Reads name from the file
+    cout << name;
     file.close();
     return 0;
 }
