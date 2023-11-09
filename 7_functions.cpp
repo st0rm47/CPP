@@ -11,25 +11,25 @@ using namespace std;
     //     return (x+y);
     // }
 
-//Overloading of Functions
-//     void sum(int x, int y) {
-//         cout << x+y << endl;
-//     }
-//     void sum(double x, double y) {
-//         cout << x+y << endl;
-//     }
+    //Overloading of Functions
+    void sum(int x, int y) {
+        cout << x+y << endl;
+    }
+    void sum(double x, double y) {
+        cout << x+y << endl;
+    }
 
-//     int main() {
-//         sum(42, 31);
-//         sum(3.14, 5.66);    //Function calls based on type of argument
+    int main() {
+        sum(42, 31);
+        sum(3.14, 5.66);    //Function calls based on type of argument
 
-//         hello();        //Function Call
-//         hello();        
-//         hello();        
-//         hello();        //Function can be called as many times as you want  
-//         bio("Subodh");
+        hello();        //Function Call
+        hello();        
+        hello();        
+        hello();        //Function can be called as many times as you want  
+        bio("Subodh");
 
-// }
+}
 
 
 /*--->>ChatBot using Function*/
@@ -79,7 +79,7 @@ void swap(int a,int b){
     temp=a;
     a=b;
     b=temp;
-    }
+}
 int main(){
     int a=5,b=3;
     swap(a,b);
