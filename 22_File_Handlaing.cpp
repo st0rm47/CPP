@@ -15,13 +15,16 @@
 using namespace std;
 
 int main(){
-    char str;
+    char str[30];
     ifstream file;
     file.open("file.txt");
-    while(!file.eof()){
-        file >> str;                      // Reads from a file
+    // while(!file.eof()){                     // reads until the end of file
+        // file >> str;                      // Reads from a file
+        
+        file.getline(str,20);               // Reads only 20 characters
+        
         cout << str;
-    }
+    //}
     file.close();                        // Closing a file
     return 0;
 }
@@ -61,3 +64,5 @@ int main(){
     file.close();
     return 0;
 }
+
+
