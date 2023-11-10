@@ -133,8 +133,7 @@ int main() {
     fstream file("file.txt", ios::in | ios::out | ios::trunc);
 
     // Write data to the file
-    file << "Welcome to Nepal" << endl;
-    file << "We warmly welcome you here" << endl;
+    file << "Hello" << endl;
 
     // Get and display the current positions of the input and output file pointers
     cout << "Initial positions:" << endl;
@@ -154,7 +153,7 @@ int main() {
     file.seekp(0, ios::end);
 
     // Write more data to the end of the file
-    file << "Appending data at the end." << endl;
+    file << "Nepal" << endl;
 
     // Get and display the updated positions of the input and output file pointers
     cout << "Updated positions:" << endl;
