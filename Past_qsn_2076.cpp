@@ -53,61 +53,127 @@
 // }
 
 
-/*QSN. 2*/
-#include<iostream>
+// /*QSN. 2*/
+// #include<iostream>
+// using namespace std;
+
+// class Distance {
+// private:
+//     int feet;
+//     int inch;
+
+// public:
+//     Distance() {
+//         feet = 0;
+//         inch = 0;
+//     }
+
+//     Distance(int f, int i) {
+//         feet = f;
+//         inch = i;
+//     }
+
+//     // Friend function declaration
+//     friend Distance sum(Distance& a, Distance& b);
+    
+//     // Member function to display the distance
+//     void displayDistance(){
+//         cout << "Feet: " << feet << " Inches: " << inch << endl;
+//     }
+// };
+
+// // Friend function definition
+// Distance sum(Distance& a,Distance& b) {
+//     Distance result;
+//     result.feet = a.feet + b.feet;
+//     result.inch = a.inch + b.inch;
+
+//     // Adjust inches if it exceeds 12
+//     if (result.inch >= 12) {
+//         result.inch -= 12;
+//         result.feet++;
+//     }
+//     return result;
+// }
+
+// int main() {
+//     // Create two Distance objects
+//     Distance distance1(5, 9);
+//     Distance distance2(3, 4);
+
+//     // Use the friend function to add distances
+//     Distance total = sum(distance1, distance2);
+
+//     // Display the result in the main function
+//     cout << "Result of adding distances in the main function: ";
+//     total.displayDistance();
+
+//     return 0;
+// }
+
+
+/*QSN. 10*/
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Distance {
+class Student {
 private:
-    int feet;
-    int inch;
+    int sid;
+    string sname;
+    string level;
 
 public:
-    Distance() {
-        feet = 0;
-        inch = 0;
+    // Constructor
+    Student(){
+        sid=0;
+        sname="";
+        level="";
+    }
+    Student(int id,string name,string lvl){
+        sid=id;
+        sname=name;
+        level=lvl;
     }
 
-    Distance(int f, int i) {
-        feet = f;
-        inch = i;
+    // Member function to input student details
+    void inputDetails() {
+        cout << "Enter Student ID: ";
+        cin >> sid;
+
+        cout << "Enter Student Name: ";
+        cin >> sname;
+
+        cout << "Enter Student Level: ";
+        cin >> level;
     }
 
-    // Friend function declaration
-    friend Distance sum(Distance& a, Distance& b);
-    
-    // Member function to display the distance
-    void displayDistance(){
-        cout << "Feet: " << feet << " Inches: " << inch << endl;
+    // Member function to display student details
+    void displayDetails(){
+        cout << "Student ID: " << sid << "\n";
+        cout << "Student Name: " << sname << "\n";
+        cout << "Student Level: " << level << "\n";
     }
 };
 
-// Friend function definition
-Distance sum(Distance& a,Distance& b) {
-    Distance result;
-    result.feet = a.feet + b.feet;
-    result.inch = a.inch + b.inch;
-
-    // Adjust inches if it exceeds 12
-    if (result.inch >= 12) {
-        result.inch -= 12;
-        result.feet++;
-    }
-    return result;
-}
-
 int main() {
-    // Create two Distance objects
-    Distance distance1(5, 9);
-    Distance distance2(3, 4);
+    // Create two objects of the Student class
+    Student student1, student2;
 
-    // Use the friend function to add distances
-    Distance total = sum(distance1, distance2);
+    // Input details for the first student
+    cout << "Enter details for the first student:\n";
+    student1.inputDetails();
 
-    // Display the result in the main function
-    cout << "Result of adding distances in the main function: ";
-    total.displayDistance();
+    // Input details for the second student
+    cout << "\nEnter details for the second student:\n";
+    student2.inputDetails();
+
+    // Display details of both students
+    cout << "\nDetails of the first student:\n";
+    student1.displayDetails();
+
+    cout << "\nDetails of the second student:\n";
+    student2.displayDetails();
 
     return 0;
 }
-
