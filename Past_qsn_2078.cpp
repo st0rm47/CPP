@@ -53,7 +53,7 @@ int main() {
 }
 
 
-/*2.*/
+/*QSN 2.*/
 /*Meters to Feet (Source)*/
 #include <iostream>
 using namespace std;
@@ -151,3 +151,16 @@ int main(){
     f1.display();
     return 0;
 }
+
+/*QSN. 3*/
+
+/*QSN. 5*/
+
+
+/*QSN. 6*/
+
+/*QSN. 9*/
+
+/*QSN. 10*/
+
+/*QSN. 11*/
