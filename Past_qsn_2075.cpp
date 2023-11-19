@@ -57,46 +57,46 @@ int main(){
 }
 
 
-/* Example No 2."Celsius to Fahrenheit" */
-#include<iostream>
-using namespace std;
-class Celsius{
-    private:
-        float celsi;
-    public:
-        Celsius(float c){
-            celsi=c;
-        }
-        float getcelsius(){
-            return celsi;
-        }
-};
-class Fahrenheit{
-    private:
-        float fahren;
-    public:
-        Fahrenheit(){
-            fahren=0;
-        }
-        Fahrenheit(float f){
-            fahren=f;
-        }
-        Fahrenheit(Celsius c1){
-            float c;
-            c=c1.getcelsius();
-            fahren=((c*9/5)+32);
-        }
-        void display(){
-            cout << "Temperature = " << fahren << endl;
-        }
-};
-int main(){
-    Fahrenheit f1;
-    Celsius c1(15.3);
-    f1=c1;
-    f1.display();
-    return 0;
-}
+// /* Example No 2."Celsius to Fahrenheit" */
+// #include<iostream>
+// using namespace std;
+// class Celsius{
+//     private:
+//         float celsi;
+//     public:
+//         Celsius(float c){
+//             celsi=c;
+//         }
+//         float getcelsius(){
+//             return celsi;
+//         }
+// };
+// class Fahrenheit{
+//     private:
+//         float fahren;
+//     public:
+//         Fahrenheit(){
+//             fahren=0;
+//         }
+//         Fahrenheit(float f){
+//             fahren=f;
+//         }
+//         Fahrenheit(Celsius c1){
+//             float c;
+//             c=c1.getcelsius();
+//             fahren=((c*9/5)+32);
+//         }
+//         void display(){
+//             cout << "Temperature = " << fahren << endl;
+//         }
+// };
+// int main(){
+//     Fahrenheit f1;
+//     Celsius c1(15.3);
+//     f1=c1;
+//     f1.display();
+//     return 0;
+// }
 
 
 // /*QSN. 2*/
