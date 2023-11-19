@@ -214,6 +214,8 @@ int main(){
 }
 
 /*Multipath Inheritance = Hybrid Inheritance*/
+
+
 // C++ program to show inheritance ambiguity in multipath inheritance
 #include<iostream>
 using namespace std;
