@@ -1,6 +1,6 @@
 /* 2079 */
 
-// 1.
+/*QSN. 1.*/
 #include<iostream>
 using namespace std;
 class author{
@@ -66,7 +66,7 @@ int main(){
 }
 
 
-//2. 
+/*QSN. 2.*/ 
 #include<iostream>
 using namespace std;
 class dist{
