@@ -36,7 +36,7 @@ int main() {
 
     // Read data for each account
     for (int i = 0; i < 5; i++) {
-        cout << "\nEnter details for Account " << i + 1 << endl;
+        cout << "\nEnter details for Account " << i+1 << endl;
         accounts[i].readData();
     }
 
