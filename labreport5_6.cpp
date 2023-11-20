@@ -218,14 +218,18 @@ public:
 };
 class Mangoes: public Fruit{
 public:
-    Mangoes(int num): Fruit(num){}
+    Mangoes(int num): Fruit(num){
+
+    }
     void print_mangoes(){
         cout << "Number of mangoes: " << get_num() << endl;
     }
 };
 class Apples: public Fruit{
     public:
-    Apples(int num): Fruit(num){}
+    Apples(int num): Fruit(num){
+
+    }
     void print_apples(){
         cout << "Number of apples: " << get_num() << endl;
     }
@@ -243,3 +247,46 @@ int main (){
 
     return 0;
 }
+
+/*Example*/
+#include<iostream>
+using namespace std;
+ class A{
+    int adata;
+    public:
+    A(int a){
+        adata=a;
+    }
+    void show(){
+        cout << "A=" << adata << endl;
+    }
+ };
+ class B{
+    int bdata;
+    public:
+    B(int b){
+        bdata=b;
+    }
+    void show(){
+        cout << "A=" << bdata << endl;
+    }
+ };
+ class C : public A, public B{
+    int cdata;
+    public:
+    C(int a,int b,int c):A(a), B(b){
+        cdata=c;
+    }
+    void show(){
+        A::show();
+        B::show();
+        cout << "A=" << cdata << endl;
+    }
+ };
+ int main(){
+    
+    C c(5,6,7);
+   
+    c.show();
+
+ }
