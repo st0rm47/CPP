@@ -215,3 +215,38 @@ int main() {
     cout << "Area of rectangle 2: " << r2.area() << endl;
     return 0;
 }
+
+/*Overloading the copy constructor*/
+#include<iostream>
+using namespace std;
+class test {
+private:
+    int x;
+public:
+     test(int a) {
+        x = a;
+    }
+    test(const test &t) {
+        x = t.x;
+    }
+    test(const test &t, const test &u) {
+        x = t.x + u.x;
+    }
+
+    int getX() const {
+        return x;
+    }
+};
+
+int main() {
+    test t1(3);
+    test t2(t1);
+    test t3(t1, t2);
+
+    cout << "t1.x: " << t1.getX() << endl;
+    cout << "t2.x: " << t2.getX() << endl;
+    cout << "t3.x: " << t3.getX() << endl;
+
+    return 0;
+}
+
