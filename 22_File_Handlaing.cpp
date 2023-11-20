@@ -5,8 +5,8 @@
     ifstream can be used for reading
     fstream can be used for both read and write*/
 
-/* ios::out ---> open file for reading
-   ios::in ---> open file for writing*/
+/* ios::out ---> open file for writing
+   ios::in ---> open file for reading*/
 
 
 /*Program to read contents from file*/
