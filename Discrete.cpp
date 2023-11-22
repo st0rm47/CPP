@@ -1034,6 +1034,7 @@ int main()
         }
     }
 
+
     if (isEquivalence)
         cout << "The given relation is an equivalence relation." << endl;
     else
