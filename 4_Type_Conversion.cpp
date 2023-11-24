@@ -26,9 +26,36 @@ int main(){
 
     //Enumeration
     enum {Sun,Mon,Tue,Wed,Thu,Fri,Sat};
-
+ 
     //Namespacce
     cout << first :: var << endl;
     cout << second :: var << endl;
     
 }
+
+
+
+/*Program to Demonstrate Use of Namespace*/
+#include<iostream>
+using namespace std;
+namespace first{
+    string name="Ben Stokes";
+    int age="34";
+}
+namespace second{
+    string name="Glenn Maxwell";
+    int age="34";
+}
+
+int main(){
+    cout << "Details about First Cricketer" << endl;
+    cout << first::name << endl;
+    cout << first::age << endl;
+
+    cout << "Details about Second Cricketer" << endl;
+    cout << second::name << endl;
+    cout << second::age << endl;
+
+return 0;
+}
+    
