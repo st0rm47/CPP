@@ -39,12 +39,12 @@ int main(){
 #include<iostream>
 using namespace std;
 namespace first{
-    string name="Ben Stokes";
-    int age="34";
+    string name = "Ben Stokes";
+    int age = 34;
 }
 namespace second{
-    string name="Glenn Maxwell";
-    int age="34";
+    string name = "Glenn Maxwell";
+    int age = 35;
 }
 
 int main(){
