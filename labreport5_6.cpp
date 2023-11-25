@@ -268,7 +268,7 @@ using namespace std;
         bdata=b;
     }
     void show(){
-        cout << "A=" << bdata << endl;
+        cout << "B=" << bdata << endl;
     }
  };
  class C : public A, public B{
@@ -280,7 +280,7 @@ using namespace std;
     void show(){
         A::show();
         B::show();
-        cout << "A=" << cdata << endl;
+        cout << "C=" << cdata << endl;
     }
  };
  int main(){

@@ -249,3 +249,67 @@ int main() {
     return 0;
 }
 
+/*Constructor Chaining*/
+#include<iostream>
+using namespace std;
+
+class A{
+public:
+    int a;
+
+    // Default constructor
+    A() {
+        cout << "Default constructor called." << endl;
+        a = 0;
+    }
+    // Parameterized constructor
+    A(int x) : A() {
+        // Constructor chaining to call the default constructor
+        cout << "Parameterized constructor called." << endl;
+        a = x;
+    }
+};
+
+int main() {
+    // Creating objects of MyClass
+    A obj1;           // Calls default constructor
+    cout << "Value: " << obj1.a << endl;
+
+    A obj2(42);       // Calls parameterized constructor
+    cout << "Value: " << obj2.a << endl;
+
+    return 0;
+}
+
+
+/*Destructor Chaining*/
+#include<iostream>
+using namespace std;
+
+class Base {
+public:
+    Base() {
+        cout << "Base constructor called." << endl;
+    }
+    ~Base() {
+        cout << "Base destructor called." << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    Derived() {
+        cout << "Derived constructor called." << endl;
+    }
+    ~Derived() {
+        cout << "Derived destructor called." << endl;
+    }
+};
+
+int main() {
+    // Creating an object of the Derived class
+    Derived derivedObj;
+    // Destructor of Derived is called first, followed by Base
+    // Destructor chaining happens automatically in reverse order of construction
+    return 0;
+}

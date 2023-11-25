@@ -1,4 +1,4 @@
-/*-->Program to add 2 complex numbers */
+/*--> Program to add 2 complex numbers */
 
 /* Return by Value */
 #include <iostream>
