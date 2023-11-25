@@ -20,9 +20,6 @@ int main(){
     y=int(x);
     cout << y;
 
-    //Dynamic Memory Allocation
-    // int *a=new int(20);
-    // delete a;
 
     //Enumeration
     enum {Sun,Mon,Tue,Wed,Thu,Fri,Sat};
