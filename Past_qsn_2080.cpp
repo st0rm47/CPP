@@ -11,7 +11,6 @@ void displayCharacters(char character = '*', int count = 10) {
     }
     cout << endl;
 }
-
 int main() {
     // Display '*' 10 times (using default arguments)
     cout << "Default: ";
