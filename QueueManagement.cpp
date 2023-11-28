@@ -39,7 +39,6 @@ class Queue {       //Class Declaration
 		queue[size-1]=x;    //The new data is placed at the end of the queue
 	}
 }; 
-
 int main() { 
 	Queue q; 
 	q.add(42); q.add(2); q.add(8); q.add(1); 
