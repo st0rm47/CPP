@@ -13,9 +13,6 @@ public:
         cout << y << endl;
     }
     void display(int x,int y){
-        // cout << this->x << endl;
-        // cout << this->y << endl;
-        // //Shows the value of data member
         this -> x = x;
         cout << this -> x <<endl;
 
