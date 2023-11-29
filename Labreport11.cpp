@@ -13,7 +13,8 @@ public:
 int main(){
     test t;
     t.getdata();
-    ofstream a("Data.bin");
+    ofstream a;
+    a.open("Data.bin");
     a.write((char *)&t,sizeof(t));
     a.close();
     return 0;
