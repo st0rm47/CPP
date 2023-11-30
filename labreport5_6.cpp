@@ -219,7 +219,7 @@ public:
 class Mangoes: public Fruit{
 public:
     Mangoes(int num): Fruit(num){
-
+        
     }
     void print_mangoes(){
         cout << "Number of mangoes: " << get_num() << endl;
