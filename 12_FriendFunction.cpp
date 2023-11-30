@@ -1,25 +1,25 @@
-/* Friend Function */
-#include<iostream>
-using namespace std;
-class friendfun{
-    int a,b;
-    public:
-    void getdata()
-    {
-        cout <<"Enter values of a and b: ";
-        cin >> a >> b;
-    }
-    friend void show (friendfun f);
-};
-void show(friendfun f){
-    cout << f.a << endl << f.b;
-}
-int main (){
-    friendfun f;
-    f.getdata();
-    show(f);
-    return 0;
-}
+// /* Friend Function */
+// #include<iostream>
+// using namespace std;
+// class friendfun{
+//     int a,b;
+//     public:
+//     void getdata()
+//     {
+//         cout <<"Enter values of a and b: ";
+//         cin >> a >> b;
+//     }
+//     friend void show (friendfun f);
+// };
+// void show(friendfun f){
+//     cout << f.a << endl << f.b;
+// }
+// int main (){
+//     friendfun f;
+//     f.getdata();
+//     show(f);
+//     return 0;
+// }
 
 
 /* Friend Function acting as a bridge */
