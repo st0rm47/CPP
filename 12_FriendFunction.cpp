@@ -1,4 +1,4 @@
-// /* Friend Function */
+/* Friend Function */
 #include<iostream>
 using namespace std;
 class friendfun{
