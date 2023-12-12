@@ -907,29 +907,47 @@ int main()
 #include <iostream>
 using namespace std;
 
-int main() 
-{   
-    cout << "\t\t=========================" << endl;
-    cout << "\t\t  Validity of Arguments  " << endl;
-    cout << "\t\t=========================" << endl;
-    cout << "A  |  B  |  A->B  |  Validity " << endl;
-    cout << "==============================" << endl;
+// Function to compute the truth value of the expression !(A && B)
+bool originalExpression(bool A, bool B) 
+{
+    return !(A && B);
+}
 
-    // Loop through all possible truth values for A and B
-    for (int A = 0; A <= 1; A++)
-        for (int B = 0; B <= 1; B++) 
+// Function to compute the truth value of the expression (!A || !B)
+bool demorganEquivalent(bool A, bool B) 
+{
+    return (!A || !B);
+}
+
+int main() {
+    cout << "\t\t==========================================" << endl;
+    cout << "\t\t  Validity Check for De Morgan's Theorem  " << endl;
+    cout << "\t\t==========================================" << endl;
+   
+    cout << "A  |  B  |  NOT(A AND B)  |  (NOT A OR NOT B)" << endl;
+    cout << "=======================================" << endl;
+
+    for (int A = 0; A <= 1; A++) 
+    {
+        for (int B = 0; B <= 1; B++)
         {
-            // Calculate the result of A implies B
-            int result = (!A || B);
+            bool result1 = originalExpression(A, B);
+            bool result2 = demorganEquivalent(A, B);
+            cout << A << "  |  " << B << "  |" << "\t" << result1 << "\t" << "  |"  << "\t" << result2 << endl;
 
-            // Determine if the argument is valid or invalid
-            string validity = (result == 1) ? "Valid" : "Invalid";
-
-            // Output the result in the table format
-            cout << A << "  |  " << B << "  |     " << result << "  |  "  << validity << endl;
+            if (result1 != result2) 
+            {
+                cout << "De Morgan's Theorem is not satisfied for A=" << A << " and B=" << B << endl;
+                return 1; 
+            }
         }
+    }
+    cout << endl;
+    cout << "De Morgan's Theorem is satisfied for all input combinations." << endl;
+    cout << "Hence, the argument is said to be valid and is proved using a truth table." << endl;
     return 0;
 }
+
 
 
 
@@ -987,7 +1005,7 @@ int main()
 
 
 
-/*Equivalemce Relation*/
+// /*Equivalemce Relation*/
 #include <iostream>
 using namespace std;
 
@@ -1028,7 +1046,7 @@ int main()
 
             for (int k = 0; k < n && isEquivalence; k++) 
             {
-                if (relation[i][1] == relation[j][0] && relation[j][1] == relation[k][0] && relation[i][0] != relation[k][1])
+                if (relation[i][1] == relation[k][0] && relation[i][0] != relation[k][1])
                     isEquivalence = false;
             }
         }
